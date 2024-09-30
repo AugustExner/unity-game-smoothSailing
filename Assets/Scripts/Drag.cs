@@ -16,20 +16,11 @@ public class Draggable : MonoBehaviour
         // Check if the player is within the allowed proximity to drag
         if (distanceToPlayer <= dragDistanceThreshold)
         {
-            // Allow dragging if the mouse button is held down and within the threshold
-            if (Input.GetMouseButtonDown(0))
+            // Allow dragging if the "E" key is pressed and within the threshold
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                isDragging = true;  // Start dragging
+                isDragging = !isDragging;  // Toggle dragging on or off when "E" is pressed
             }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                isDragging = false;  // Stop dragging
-            }
-        }
-        else
-        {
-            isDragging = false;  // Prevent dragging if outside of proximity
         }
 
         // If dragging, make the object follow the player's position
