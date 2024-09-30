@@ -6,8 +6,10 @@ public class StandingTreeToFallenTree : MonoBehaviour
 {
     public GameObject standingPalmTree;  // Assign the standing tree object in the inspector
     //public GameObject fallenPalmTree;    // Assign the fallen tree object in the inspector
-    public GameObject logPalmTree;
+    //public GameObject logPalmTree;
     public GameObject trunkPalmTree;
+    public GameObject buildingLogPalmTree;
+    //public GameObject buildingLogPalmTree1;
 
     public float interactDistance = 3f;  // Define how close the player must be to interact
     private GameObject player;           // Reference to the player object
@@ -15,8 +17,10 @@ public class StandingTreeToFallenTree : MonoBehaviour
     void Start()
     {
         //fallenPalmTree.SetActive(false);  // Ensure the fallen tree is inactive at the start
-        logPalmTree.SetActive(false);
+        //logPalmTree.SetActive(false);
         trunkPalmTree.SetActive(false);
+        buildingLogPalmTree.SetActive(false);
+        //buildingLogPalmTree1.SetActive(false);
         player = GameObject.FindWithTag("Player"); // Find the player in the scene (assuming it is tagged as "Player")
     }
 
@@ -40,8 +44,10 @@ public class StandingTreeToFallenTree : MonoBehaviour
         {
             standingPalmTree.SetActive(false);  // Disable standing tree
             //fallenPalmTree.SetActive(true);     // Activate fallen tree
-            logPalmTree.SetActive(true);
+            //logPalmTree.SetActive(true);
             trunkPalmTree.SetActive(true);
+            buildingLogPalmTree.SetActive(true);
+            //buildingLogPalmTree1.SetActive(true);
         }
     }
 }
