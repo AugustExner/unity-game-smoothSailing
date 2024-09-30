@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LogsToBoat : MonoBehaviour
 {
-    public GameObject Wood_BoatV1;            // Assign your Wood_BoatV1 prefab here
-    public GameObject player;                 // Reference to the player object
-    public float spawnDistanceThreshold = 3f; // Distance within which the player can spawn the boat
-    public float logProximityThreshold = 3f;  // Distance within which logs must be close to each other
-    private static bool isBoatSpawned = false; // Static to ensure only one boat is spawned
+    public GameObject Wood_BoatV1;              // Assign your Wood_BoatV1 prefab here
+    public GameObject player;                     // Reference to the player object
+    public float spawnDistanceThreshold = 3f;    // Distance within which the player can spawn the boat
+    public float logProximityThreshold = 3f;     // Distance within which logs must be close to each other
+    private static bool isBoatSpawned = false;   // Static to ensure only one boat is spawned
 
     void Update()
     {
@@ -25,17 +25,17 @@ public class LogsToBoat : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         // Check if the player is within the allowed proximity to spawn the boat
-        if (distanceToPlayer <= spawnDistanceThreshold && AreSixLogsNearby(out List<GameObject> nearbyLogs))
+        if (distanceToPlayer <= spawnDistanceThreshold && AreLogsNearby(out List<GameObject> nearbyLogs))
         {
             SpawnBoat(nearbyLogs);
         }
     }
 
-    private bool AreSixLogsNearby(out List<GameObject> nearbyLogs)
+    private bool AreLogsNearby(out List<GameObject> nearbyLogs)
     {
         nearbyLogs = new List<GameObject>();
         // Find all objects tagged as "logPalmTree"
-        GameObject[] logs = GameObject.FindGameObjectsWithTag("logPalmTree");
+        GameObject[] logs = GameObject.FindGameObjectsWithTag("Carriable");
 
         // Check how many logs are within the proximity of this logPalmTree
         foreach (GameObject log in logs)
@@ -50,8 +50,11 @@ public class LogsToBoat : MonoBehaviour
             }
         }
 
-        // Check if there are 5 or more logs nearby (excluding this log, so 6 total)
-        return nearbyLogs.Count >= 5; // Must have 5 nearby logs (plus the current one makes 6)
+        // Include this log in the total count for proximity check
+        nearbyLogs.Add(gameObject);
+
+        // Check if there are at least 2 logs nearby (including the current one)
+        return nearbyLogs.Count >= 2; // Must have at least 2 logs nearby
     }
 
     private void SpawnBoat(List<GameObject> nearbyLogs)

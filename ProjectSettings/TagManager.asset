@@ -10,6 +10,8 @@ TagManager:
   - handLogPalmTree
   - buildingLogPalmTree
   - Carriable
+  - RightHand
+  - Tool
   layers:
   - Default
   - TransparentFX

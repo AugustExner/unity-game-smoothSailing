@@ -6,6 +6,7 @@ public class CarryLogs : MonoBehaviour
 {
     public GameObject player;                 // Reference to the player object
     public float carryDistanceThreshold = 3f; // Distance within which the player can carry the log
+    public float logProximityThreshold = 3f;  // Distance within which logs must be close to each other
 
     private Transform leftHand;               // Reference to the left hand transform of the player
     private GameObject currentCarriable;      // Currently carried object
@@ -49,6 +50,8 @@ public class CarryLogs : MonoBehaviour
 
     private void TryCarryCarriable()
     {
+        // Check if there are two logs nearby
+
         // Find the closest object tagged as "Carriable"
         GameObject[] carriables = GameObject.FindGameObjectsWithTag("Carriable");
         GameObject closestCarriable = null;
@@ -74,6 +77,29 @@ public class CarryLogs : MonoBehaviour
         {
             Debug.Log("No carriable objects within range.");
         }
+    }
+
+    private bool AreTwoLogsNearby()
+    {
+        // Find all objects tagged as "Carriable" (or specifically "logPalmTree" if needed)
+        GameObject[] logs = GameObject.FindGameObjectsWithTag("Carriable");
+        int nearbyLogCount = 0;
+
+        // Check how many logs are within the proximity of the player
+        foreach (GameObject log in logs)
+        {
+            float distanceToLog = Vector3.Distance(player.transform.position, log.transform.position);
+            if (distanceToLog <= logProximityThreshold)
+            {
+                nearbyLogCount++;
+                if (nearbyLogCount >= 2) // If two logs are found
+                {
+                    return true; // Indicate that there are two nearby logs
+                }
+            }
+        }
+
+        return false; // No two logs nearby
     }
 
     private void CarryCarriable(GameObject carriable)
