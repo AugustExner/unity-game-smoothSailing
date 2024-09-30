@@ -83,6 +83,6 @@ public class BoomRotation : MonoBehaviour
         Debug.Log("Heading: " + heading + " | PolarFactor: " + polarSpeedFactor + " | Speed:" + boatSpeed + " | BoomAngle: " + currentAngle + " | TrimFactor: " + trimFactor);
 
         movementFactor = Mathf.Lerp(movementFactor, boatSpeed, Time.deltaTime / 8);
-        //transform.Translate((-boatSpeed * movementFactor) * Time.deltaTime, 0.0f, 0.0f);
+        transform.Translate((-boatSpeed * movementFactor) * Time.deltaTime, 0.0f, 0.0f);
     }
 }
