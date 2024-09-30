@@ -8,12 +8,12 @@ public class LogsToBoat : MonoBehaviour
     public GameObject player;              // Reference to the player object
     public float spawnDistanceThreshold = 3f;  // Distance within which the player can spawn the boat
     public float logProximityThreshold = 3f;  // Distance within which logs must be close to each other
-    private bool isBoat = false;
+    private static bool isBoatSpawned = false;  // Static to ensure only one boat is spawned
 
     void Update()
     {
-        // Check if the "E" key is pressed
-        if (Input.GetKeyDown(KeyCode.E)) // Interact with "E"
+        // Check if the "E" key is pressed and the boat hasn't been spawned yet
+        if (Input.GetKeyDown(KeyCode.E) && !isBoatSpawned) // Interact with "E"
         {
             TrySpawnBoat();
         }
@@ -25,18 +25,16 @@ public class LogsToBoat : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         // Check if the player is within the allowed proximity to spawn the boat
-        if (distanceToPlayer <= spawnDistanceThreshold && AreTwoLogsNearby())
+        if (distanceToPlayer <= spawnDistanceThreshold && AreTwoLogsNearby(out GameObject nearbyLog))
         {
-            SpawnBoat();
+            SpawnBoat(nearbyLog);
         }
     }
 
-    private bool AreTwoLogsNearby()
+    private bool AreTwoLogsNearby(out GameObject nearbyLog)
     {
         // Find all objects tagged as "logPalmTree"
         GameObject[] logs = GameObject.FindGameObjectsWithTag("logPalmTree");
-
-        int nearbyLogsCount = 0;
 
         // Check how many logs are within the proximity of this logPalmTree
         foreach (GameObject log in logs)
@@ -46,19 +44,20 @@ public class LogsToBoat : MonoBehaviour
                 float distanceToLog = Vector3.Distance(transform.position, log.transform.position);
                 if (distanceToLog <= logProximityThreshold)
                 {
-                    nearbyLogsCount++;
+                    nearbyLog = log; // Found a nearby log
+                    return true;
                 }
             }
         }
 
-        // Return true if two or more logs are nearby
-        return nearbyLogsCount >= 1; // 1 because it’s counting the other log (not itself)
+        nearbyLog = null; // No nearby log found
+        return false;
     }
 
-    private void SpawnBoat()
+    private void SpawnBoat(GameObject nearbyLog)
     {
-        if (isBoat)
-            return; // Prevent spawning if already a boat
+        if (isBoatSpawned)
+            return; // Prevent spawning if a boat has already been spawned
 
         // Define the desired rotation for the boat (adjust these values as needed)
         Quaternion boatRotation = Quaternion.Euler(0, 90, 0); // Example: Rotates the boat 90 degrees on the Y-axis
@@ -66,12 +65,13 @@ public class LogsToBoat : MonoBehaviour
         // Instantiate the boat prefab at the current position and the desired rotation
         GameObject boat = Instantiate(Wood_BoatV1, transform.position, boatRotation);
 
-        // Optionally destroy the logPalmTree or deactivate it
-        Destroy(gameObject);
+        // Destroy both the current log and the nearby log
+        Destroy(gameObject);     // Destroy this log
+        Destroy(nearbyLog);      // Destroy the nearby log
 
         // Set the boat's parent to keep the hierarchy clean (optional)
         boat.transform.SetParent(transform.parent);
 
-        isBoat = true; // Update state to indicate the log has been turned into a boat
+        isBoatSpawned = true; // Update state to indicate a boat has been spawned
     }
 }
