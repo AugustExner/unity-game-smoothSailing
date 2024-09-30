@@ -1043,13 +1043,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoomPivot: {fileID: 2116702533}
-  rotationSpeed: 50
+  rotationSpeed: 40
   minAngle: 0
   maxAngle: 90
   windDirection: 90
   windSpeed: 1
   minSpeed: 0
-  maxSpeed: 10
+  maxSpeed: 3
 --- !u!1 &2116702532
 GameObject:
   m_ObjectHideFlags: 0
