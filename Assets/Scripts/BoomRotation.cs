@@ -103,8 +103,6 @@ public class BoomRotation : MonoBehaviour
 
     private void Speed()
     {
-
-
         float heading = Mathf.Abs(normalizedRelativeBoatDirection);
 
         if (heading <= degreesToWind)
@@ -132,8 +130,10 @@ public class BoomRotation : MonoBehaviour
             timeFacingWind = 0.0f;
             isStalled = false;
 
-
-            trimFactor = Mathf.Abs((180 - Mathf.Abs(2 * currentAngle - heading)) / 180);
+            //trimFactor = Mathf.Abs((180 - Mathf.Abs(2 * currentAngle - heading)) / 180);
+            
+            
+            trimFactor = Mathf.Abs((140 - Mathf.Abs(1.55f * currentAngle - (heading - degreesToWind))) / 140);
 
 
             // Use the polar diagram to adjust speed based on heading
@@ -149,7 +149,6 @@ public class BoomRotation : MonoBehaviour
         boatSpeed = Mathf.Clamp(boatSpeed, minSpeed, maxSpeed);
         movementFactor = Mathf.Lerp(movementFactor, boatSpeed, Time.deltaTime * 2f);
 
-        Debug.Log(isStalled);
 
         if (isStalled)
         {
