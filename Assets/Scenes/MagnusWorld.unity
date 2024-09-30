@@ -1007,7 +1007,7 @@ MonoBehaviour:
   targetAngle: 90
   speed: 0.2
   steeringSpeed: 1
-  movementThreshold: 2
+  movementThreshold: 3
 --- !u!64 &1928662319
 MeshCollider:
   m_ObjectHideFlags: 0
