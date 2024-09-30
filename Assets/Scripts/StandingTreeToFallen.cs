@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeSwitcher : MonoBehaviour
+public class StandingTreeToFallen : MonoBehaviour
 {
     public GameObject fallenPalmTree;  // The fallen tree asset
 
