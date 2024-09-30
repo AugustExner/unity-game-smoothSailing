@@ -17,5 +17,12 @@ public class FloatObjectScript : MonoBehaviour
     void FixedUpdate()
     {
         forceFactor = 1.0f - ((transform.position.y - waterLevel) / floatThreshold);
+
+        if (forceFactor > 0.0f )
+        {
+            floatForce = -Physics.gravity * GetComponent<Rigidbody>().mass *(forceFactor - GetComponent<Rigidbody>().velocity.y * waterDensity);
+            floatForce += new Vector3(0.0f, -downForce * GetComponent<Rigidbody>().mass, 0.0f);
+            GetComponent<Rigidbody>().AddForceAtPosition(floatForce, transform.position);
+        }
     }
 }
