@@ -16,7 +16,7 @@ public class BoomRotation : MonoBehaviour
 
     float verticalInput;
 
-    public float windDirection = 90.0f;
+    float windDirection = 90.0f;
     public float windSpeed = 1.0f;
 
     float timeFacingWind = 0.0f; // Time spent facing directly into the wind
@@ -42,6 +42,8 @@ public class BoomRotation : MonoBehaviour
 
 
     bool isInWater = false;
+
+    public WindRotationScript windRotationScript;
 
 
 
@@ -88,6 +90,7 @@ public class BoomRotation : MonoBehaviour
         }
 
         Speed();
+        updateWindDirection();
     }
 
     // Function to normalize angles to the range of 0-360
@@ -162,5 +165,10 @@ public class BoomRotation : MonoBehaviour
         {
             transform.Translate(-movementFactor * Time.deltaTime, 0.0f, 0.0f);
         }
+    }
+
+    public void updateWindDirection()
+    {
+        windDirection = windRotationScript.getWindDirectionAngle();
     }
 }
