@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/HealthBar.cs.meta
+guid: b4b4018fe6cb6a44092cb037d24d81f0
+========
+guid: 3e0dc9584e4354140aa49ba128d9639d
+>>>>>>>> sailMechanic:Assets/Scripts/EnemyFollow.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

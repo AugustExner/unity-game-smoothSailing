@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/PlayerHealth.cs.meta
+guid: 39fb315754d135d4495435b9f0ee2419
+========
+guid: fe17edbb016a6334ead38b8e5120721f
+>>>>>>>> sailMechanic:Assets/Scripts/WaterEnemyFollow.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

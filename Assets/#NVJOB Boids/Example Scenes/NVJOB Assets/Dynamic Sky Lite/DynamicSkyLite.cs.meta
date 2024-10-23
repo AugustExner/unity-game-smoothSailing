@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/WindRotationScript.cs.meta
+guid: 744ac808b31eb09429815472ecc97d02
+========
+guid: e006f968204736d458ed693b4745c8b7
+>>>>>>>> sailMechanic:Assets/#NVJOB Boids/Example Scenes/NVJOB Assets/Dynamic Sky Lite/DynamicSkyLite.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
