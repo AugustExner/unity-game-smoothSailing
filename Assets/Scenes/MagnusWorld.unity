@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe17edbb016a6334ead38b8e5120721f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInSight: 0
+  playerInSight: 10
   closestDistanceToPlayer: 0
   walkPointRange: 10
   whatIsWater:
