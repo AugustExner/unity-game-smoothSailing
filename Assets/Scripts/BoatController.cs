@@ -11,12 +11,6 @@ public class BoatController : MonoBehaviour
     public Vector3 COM;
     [Space(15)]
 
-
-    // Windirection in form of Y-rotation
-    public float windDirection = 90.0f;
-    public float windSpeed = 1.0f;
-    public float targetAngle = 90.0f;
-
     public float speed = 1.0f;
     public float steeringSpeed = 1.0f;
     public float movementThreshold = 2.0f;
