@@ -1422,9 +1422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInSight: 5
   closestDistanceToPlayer: 2
-  walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  patrolPointReachedThreshold: 5
   whatIsWater:
     serializedVersion: 2
     m_Bits: 16
@@ -1438,7 +1436,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1702,11 +1700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0dc9584e4354140aa49ba128d9639d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInSight: 5
+  playerInSight: 10
   closestDistanceToPlayer: 2
-  walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  patrolPointReachedThreshold: 5
   whatIsWater:
     serializedVersion: 2
     m_Bits: 16
@@ -1720,7 +1716,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1814,7 +1810,7 @@ Transform:
   m_GameObject: {fileID: 909351255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.91, y: 22.25, z: 44.63}
+  m_LocalPosition: {x: 29.91, y: 26.93, z: 44.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2054,6 +2050,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3677732437614575716, guid: 380e869112d5086468a3a3992e91109d, type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677732437614575716, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
@@ -2067,11 +2067,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3677732437614575716, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3677732437614575716, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: huntingZone
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677732437614575716, guid: 380e869112d5086468a3a3992e91109d, type: 3}
+      propertyPath: layerFlock.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3677732437614575717, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_Enabled
@@ -2103,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.02
+      value: 13.01
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2150,7 +2154,7 @@ PrefabInstance:
       addedObject: {fileID: 1898276560}
     - targetCorrespondingSourceObject: {fileID: 4622948576541377396, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1898276559}
+      addedObject: {fileID: 1898276566}
   m_SourcePrefab: {fileID: 100100000, guid: 380e869112d5086468a3a3992e91109d, type: 3}
 --- !u!1 &1036049407
 GameObject:
@@ -2772,7 +2776,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseGeometry: 0
-  m_DefaultArea: 0
+  m_DefaultArea: 1
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
@@ -3588,26 +3592,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4622948576541377396, guid: 380e869112d5086468a3a3992e91109d, type: 3}
   m_PrefabInstance: {fileID: 1022080553}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1898276559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898276558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e0dc9584e4354140aa49ba128d9639d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInSight: 10
-  closestDistanceToPlayer: 2
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 1
-  patrolPointReachedThreshold: 5
-  whatIsWater:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!195 &1898276560
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3630,6 +3614,24 @@ NavMeshAgent:
   m_BaseOffset: 2.8753533
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1898276566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898276558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe17edbb016a6334ead38b8e5120721f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInSight: 10
+  closestDistanceToPlayer: 2
+  walkPointRange: 0
+  whatIsWater:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!1 &2003907658
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,12 +13,13 @@ public class EnemyFollow : MonoBehaviour
 
     private float distanceToPlayer;
 
-    public Vector3 walkPoint;
+    private Vector3 walkPoint;
     public float walkPointRange;
 
     private bool isWalkPointSet;
-    public float patrolPointReachedThreshold = 5; 
+    private float patrolPointReachedThreshold = 5; 
     public LayerMask whatIsWater;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,8 @@ public class EnemyFollow : MonoBehaviour
         if (isWalkPointSet && Vector3.Distance(agent.transform.position, walkPoint) <= patrolPointReachedThreshold)
         {
             isWalkPointSet = false; // Walk point reached, ready to set a new one
+
+          
         }
 
         // Keep moving towards the current walk point
@@ -69,6 +72,8 @@ public class EnemyFollow : MonoBehaviour
             agent.SetDestination(walkPoint);
         }
     }
+
+
 
     // Method to generate a new patrol point
     private void SetNewWalkPoint()
