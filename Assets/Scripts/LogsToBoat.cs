@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class LogsToBoat : MonoBehaviour
 {
-    public GameObject Wood_BoatV1;              // Assign your Wood_BoatV1 prefab here
-    public GameObject player;                     // Reference to the player object
-    public float spawnDistanceThreshold = 3f;    // Distance within which the player can spawn the boat
-    public float logProximityThreshold = 3f;     // Distance within which logs must be close to each other
+    public GameObject Wood_BoatV1;               // Assign your Wood_BoatV1 prefab here
+    public GameObject player;                    // Reference to the player object
+    public GameObject boatSpawner;               // Reference to the BoatSpawner object
+    public float spawnProximityThreshold = 3f;   // Distance within which logs and player must be close to the BoatSpawner
+    public Transform boatSpawnLocation;          // Specific location inside BoatSpawner where the boat will spawn
     private static bool isBoatSpawned = false;   // Static to ensure only one boat is spawned
 
     void Update()
@@ -21,29 +22,38 @@ public class LogsToBoat : MonoBehaviour
 
     private void TrySpawnBoat()
     {
-        // Calculate the distance between the player and the log
-        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        // Calculate the distance between the player and the BoatSpawner
+        float distanceToPlayer = Vector3.Distance(player.transform.position, boatSpawner.transform.position);
+        float distanceToLog = Vector3.Distance(transform.position, boatSpawner.transform.position);
 
-        // Check if the player is within the allowed proximity to spawn the boat
-        if (distanceToPlayer <= spawnDistanceThreshold && AreLogsNearby(out List<GameObject> nearbyLogs))
+        // Log distances for debugging
+        Debug.Log($"Distance to Player: {distanceToPlayer}, Distance to Log: {distanceToLog}");
+
+        // Check if both the player and logs are within proximity of the BoatSpawner
+        if (distanceToPlayer <= spawnProximityThreshold && distanceToLog <= spawnProximityThreshold && AreLogsNearby(out List<GameObject> nearbyLogs))
         {
+            Debug.Log("Player and logs are within proximity, and logs are nearby. Attempting to spawn boat.");
             SpawnBoat(nearbyLogs);
+        }
+        else
+        {
+            Debug.Log("Conditions not met. Player or logs are not in proximity.");
         }
     }
 
     private bool AreLogsNearby(out List<GameObject> nearbyLogs)
     {
         nearbyLogs = new List<GameObject>();
-        // Find all objects tagged as "logPalmTree"
+        // Find all objects tagged as "Carriable"
         GameObject[] logs = GameObject.FindGameObjectsWithTag("Carriable");
 
-        // Check how many logs are within the proximity of this logPalmTree
+        // Check how many logs are within proximity of this log
         foreach (GameObject log in logs)
         {
             if (log != gameObject) // Ignore self
             {
                 float distanceToLog = Vector3.Distance(transform.position, log.transform.position);
-                if (distanceToLog <= logProximityThreshold)
+                if (distanceToLog <= spawnProximityThreshold)
                 {
                     nearbyLogs.Add(log);
                 }
@@ -54,19 +64,30 @@ public class LogsToBoat : MonoBehaviour
         nearbyLogs.Add(gameObject);
 
         // Check if there are at least 2 logs nearby (including the current one)
-        return nearbyLogs.Count >= 2; // Must have at least 2 logs nearby
+        bool logsNearby = nearbyLogs.Count >= 2;
+        Debug.Log(logsNearby ? "Logs are nearby." : "Not enough logs nearby.");
+        return logsNearby; // Must have at least 2 logs nearby
     }
 
     private void SpawnBoat(List<GameObject> nearbyLogs)
     {
         if (isBoatSpawned)
+        {
+            Debug.Log("Boat has already been spawned.");
             return; // Prevent spawning if a boat has already been spawned
+        }
+
+        // Log that the boat is being spawned
+        Debug.Log("Spawning the boat.");
+
+        // Use the boatSpawnLocation (within the BoatSpawner) for spawning the boat
+        Vector3 spawnPosition = boatSpawnLocation.position;
 
         // Define the desired rotation for the boat (adjust these values as needed)
-        Quaternion boatRotation = Quaternion.Euler(0, 90, 0); // Example: Rotates the boat 90 degrees on the Y-axis
+        Quaternion boatRotation = Quaternion.Euler(0, 0, 0); // Example: Rotates the boat 90 degrees on the Y-axis
 
-        // Instantiate the boat prefab at the current position and the desired rotation
-        GameObject boat = Instantiate(Wood_BoatV1, transform.position, boatRotation);
+        // Instantiate the boat prefab at the specific spawn position within the BoatSpawner
+        GameObject boat = Instantiate(Wood_BoatV1, spawnPosition, boatRotation);
 
         // Destroy the current log and all nearby logs
         Destroy(gameObject); // Destroy this log
@@ -75,8 +96,8 @@ public class LogsToBoat : MonoBehaviour
             Destroy(log); // Destroy each nearby log
         }
 
-        // Set the boat's parent to keep the hierarchy clean (optional)
-        boat.transform.SetParent(transform.parent);
+        // Set the boat's parent to the BoatSpawner (optional, to keep hierarchy clean)
+        boat.transform.SetParent(boatSpawner.transform);
 
         isBoatSpawned = true; // Update state to indicate a boat has been spawned
     }

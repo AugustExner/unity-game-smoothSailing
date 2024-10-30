@@ -9,8 +9,8 @@ public class CarryLogs : MonoBehaviour
     public float logProximityThreshold = 3f;  // Distance within which logs must be close to each other
 
     private Transform leftHand;               // Reference to the left hand transform of the player
-    private GameObject currentCarriable;      // Currently carried object
-    private bool isCarryingLog = false;       // Track whether the player is currently carrying an object
+    public GameObject currentCarriable;      // Currently carried object
+    public bool isCarryingLog = false;       // Track whether the player is currently carrying an object
 
     void Start()
     {
@@ -48,7 +48,7 @@ public class CarryLogs : MonoBehaviour
         }
     }
 
-    private void TryCarryCarriable()
+    public void TryCarryCarriable()
     {
         // Check if there are two logs nearby
 
@@ -72,11 +72,14 @@ public class CarryLogs : MonoBehaviour
         {
             Debug.Log("Found carriable object: " + closestCarriable.name);
             CarryCarriable(closestCarriable);
+            Debug.Log("isCarryingLog is " + isCarryingLog);
         }
         else
         {
             Debug.Log("No carriable objects within range.");
         }
+
+
     }
 
     private bool AreTwoLogsNearby()
@@ -102,7 +105,7 @@ public class CarryLogs : MonoBehaviour
         return false; // No two logs nearby
     }
 
-    private void CarryCarriable(GameObject carriable)
+    public void CarryCarriable(GameObject carriable)
     {
         // Remove the Rigidbody from the carriable object
         Rigidbody logRigidbody = carriable.GetComponent<Rigidbody>();
@@ -114,10 +117,9 @@ public class CarryLogs : MonoBehaviour
 
         // Move the object to the player's left hand position
         Debug.Log("Carrying object in left hand...");
-
-        carriable.transform.position = leftHand.position;         // Set position to left hand
-        carriable.transform.rotation = leftHand.rotation;         // Set rotation to match the left hand
-        carriable.transform.SetParent(leftHand);                  // Attach the object to the left hand
+        carriable.transform.SetParent(leftHand);
+        carriable.transform.localPosition = new Vector3(0.281763494f, -0.262958169f, 0.390331596f);         // Set position to left hand
+        carriable.transform.localRotation = Quaternion.Euler(313.231903f, 84.8847809f, 315.722443f);         // Set rotation to match the left hand
 
         currentCarriable = carriable;  // Track the current carriable object
         isCarryingLog = true;           // Update the state to reflect that the player is now carrying the object
