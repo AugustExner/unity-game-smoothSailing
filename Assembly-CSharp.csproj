@@ -71,8 +71,8 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
-    <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\Scripts\WindRotationScript.cs" />
+    <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
@@ -84,6 +84,7 @@
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\attackBoat.cs" />
     <Compile Include="Assets\Scripts\FloatObjectScript.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\AQUAS-Lite\Scripts\AQUAS_Lite_Reflection.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Other\Scripts\Underwater.cs" />
     <Compile Include="Assets\#NVJOB Boids\Simple Boids\NVBoids.cs" />
+    <Compile Include="Assets\Scripts\MainMenuEvents.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
     <Compile Include="Assets\AQUAS-Lite\Scripts\AQUAS_Lite_CamNav.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
     <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\Scripts\ToggleUIDocument.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\NVJOB Assets\FPS Counter\FPSCounter.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
@@ -159,6 +162,7 @@
     <None Include="Assets\#NVJOB Boids\Example Scenes\NVJOB Assets\Alpha Flashing\Alpha Flashing Sprite.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+    <None Include="Assets\UI Toolkit\MainMenuVisualTree.uxml" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
     <None Include="Assets\Polytope Studio\Lowpoly_Village\Sources\Shaders\PT_Buildings_Shader_PBR.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
@@ -176,6 +180,7 @@
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\UI Toolkit\MainMenuStyle.uss" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\NVJOB Assets\SC Shaders (Legacy)\SC Shader (Normalmap, Occlusion, Reflection, Cull Off).shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
@@ -568,6 +573,18 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1132,6 +1149,10 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
