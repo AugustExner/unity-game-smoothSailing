@@ -74,24 +74,35 @@ public class EquipableR : MonoBehaviour
         }
     }
 
-    private void EquipEquipable(GameObject equipable)
+private void EquipEquipable(GameObject equipable)
+{
+    // Remove Rigidbody if it exists
+    Rigidbody equipableRigidbody = equipable.GetComponent<Rigidbody>();
+    if (equipableRigidbody != null) Destroy(equipableRigidbody);
+
+    isEquipped = true;
+    currentEquipable = equipable;
+
+    // Set currentInteractable to null before disabling the Axe script
+    Axe axeScript = equipable.GetComponent<Axe>();
+    if (axeScript != null)
     {
-        // Remove Rigidbody if it exists
-        Rigidbody equipableRigidbody = equipable.GetComponent<Rigidbody>();
-        if (equipableRigidbody != null) Destroy(equipableRigidbody);
-
-        isEquipped = true;
-        currentEquipable = equipable;
-
-        if (carryLogsScript != null && carryLogsScript.isCarryingLog)
-        {
-            MoveAxeToBelt();
-        }
-        else
-        {
-            MoveAxeToRightHand();
-        }
+        axeScript.UnregisterAsInteractable();
+        axeScript.enabled = false;
     }
+
+    // Position the axe based on whether the player is carrying a log
+    if (carryLogsScript != null && carryLogsScript.isCarryingLog)
+    {
+        MoveAxeToBelt();
+    }
+    else
+    {
+        MoveAxeToRightHand();
+    }
+}
+
+
 
     private void MoveAxeToRightHand()
     {

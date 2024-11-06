@@ -7,7 +7,7 @@ public class InteractableBase : MonoBehaviour
     private static TextMeshProUGUI interactionText; // Static to ensure only one instance controls the UI
     public float interactionDistance = 3f;  // Distance to show prompt
     private static InteractableBase currentInteractable; // Track the current interactable in range
-    private GameObject player;  // Reference to the player object
+    public GameObject player;  // Reference to the player object
 
     protected virtual void Start()
     {
@@ -16,7 +16,7 @@ public class InteractableBase : MonoBehaviour
         // Initialize the InteractionText UI if not already done
         if (interactionText == null)
         {
-            interactionText = GameObject.FindWithTag("InteractionText")?.GetComponent<TextMeshProUGUI>();
+            interactionText = GameObject.FindWithTag("InteractionText")?.GetComponentInChildren<TextMeshProUGUI>();
             if (interactionText == null)
             {
                 Debug.LogError("InteractionText UI element not found in Canvas!");
@@ -49,7 +49,7 @@ public class InteractableBase : MonoBehaviour
         }
     }
 
-    private void ShowInteractionText()
+    public void ShowInteractionText()
     {
         if (interactionText != null)
         {
@@ -58,11 +58,21 @@ public class InteractableBase : MonoBehaviour
         }
     }
 
-    private void HideInteractionText()
+    public void HideInteractionText()
     {
         if (interactionText != null)
         {
             interactionText.gameObject.SetActive(false); // Hide the UI element
+        }
+    }
+
+        public void UnregisterAsInteractable()
+    {
+        // Unregister as interactable and hide interaction text if this is the current interactable
+        if (currentInteractable == this)
+        {
+            currentInteractable = null;
+            HideInteractionText();
         }
     }
 }

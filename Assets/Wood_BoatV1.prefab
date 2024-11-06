@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood_BoatV1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93b8889cd57dbaf46b48cb5a9155ef08, type: 3}
+      propertyPath: m_TagString
+      value: Boat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62,6 +66,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 93b8889cd57dbaf46b48cb5a9155ef08, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4116901150246429113}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 93b8889cd57dbaf46b48cb5a9155ef08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1222277487111373107}
   m_SourcePrefab: {fileID: 100100000, guid: 93b8889cd57dbaf46b48cb5a9155ef08, type: 3}
 --- !u!1 &9161055337686348459 stripped
 GameObject:
@@ -111,3 +118,18 @@ MonoBehaviour:
   floatThreshold: 2
   waterDensity: 0.125
   downForce: 1.5
+--- !u!114 &-1222277487111373107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161055337686348459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adc659a0cc808b4495216ae4320402f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionMessage: Press E to interact with the boat
+  interactionDistance: 3
+  player: {fileID: 0}

@@ -10,6 +10,13 @@ public class LogsToBoat : MonoBehaviour
     public float spawnProximityThreshold = 3f;   // Distance within which logs and player must be close to the BoatSpawner
     public Transform boatSpawnLocation;          // Specific location inside BoatSpawner where the boat will spawn
     private static bool isBoatSpawned = false;   // Static to ensure only one boat is spawned
+    private BuildLog buildLogScript;             // Reference to BuildLog script for hiding interaction text
+
+    void Start()
+    {
+        // Make sure BuildLog reference is set properly
+        buildLogScript = GameObject.FindWithTag("Carriable").GetComponent<BuildLog>();
+    }
 
     void Update()
     {
@@ -98,6 +105,9 @@ public class LogsToBoat : MonoBehaviour
 
         // Set the boat's parent to the BoatSpawner (optional, to keep hierarchy clean)
         boat.transform.SetParent(boatSpawner.transform);
+
+        // After the boat is spawned, call HideInteractionText to hide the interaction text
+        buildLogScript.SwitchLogState(true);  // Assuming true indicates the log is now being carried (and hides the interaction text)
 
         isBoatSpawned = true; // Update state to indicate a boat has been spawned
     }

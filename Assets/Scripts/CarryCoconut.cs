@@ -5,25 +5,36 @@ using UnityEngine;
 public class CarryCoconut : MonoBehaviour
 {
     public GameObject player;                 // Reference to the player object
-    public float carryDistanceThreshold = 3f; // Distance within which the player can carry the log
-    public float logProximityThreshold = 3f;  // Distance within which logs must be close to each other
+    public float carryDistanceThreshold = 3f; // Distance within which the player can carry the coconut
+    public float boatProximityThreshold = 2f; // Distance within which the player can interact with the boat
 
     private Transform leftHand;               // Reference to the left hand transform of the player
-    public GameObject currentCarriable;      // Currently carried object
-    public bool isCarryingCoconut = false;       // Track whether the player is currently carrying an object
+    public GameObject currentCarriable;       // Currently carried object
+    public bool isCarryingCoconut = false;    // Track whether the player is currently carrying an object
+    private Coconut coconutScript;            // Reference to the Coconut script
+    private GameObject boat;                  // Reference to the boat GameObject
 
     void Start()
     {
         // Find the left hand GameObject of the player
         leftHand = GameObject.FindGameObjectWithTag("LeftHand").transform;
-
         if (leftHand == null)
         {
             Debug.LogError("Left hand transform not found! Make sure your player has a 'LeftHand' GameObject.");
         }
-        else
+
+        // Find the Coconut script
+        coconutScript = GameObject.FindWithTag("Coconut")?.GetComponent<Coconut>();
+        if (coconutScript == null)
         {
-            Debug.Log("Left hand transform found: " + leftHand.name);
+            Debug.LogError("Coconut script not found! Make sure the 'Coconut' GameObject has the Coconut script attached.");
+        }
+
+        // Find the boat GameObject
+        boat = GameObject.FindWithTag("Boat");
+        if (boat == null)
+        {
+            Debug.LogError("Boat GameObject not found! Make sure the 'Boat' GameObject is present in the scene.");
         }
     }
 
@@ -31,28 +42,80 @@ public class CarryCoconut : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E key pressed, attempting to carry or drop object...");
+            Debug.Log("E key pressed, attempting to carry, drop, or interact with boat...");
             TryToggleCarriable();
         }
     }
 
-    private void TryToggleCarriable()
+private void TryToggleCarriable()
+{
+    if (isCarryingCoconut && IsNearBoat())  // Ensure IsNearBoat() is called here
     {
-        if (isCarryingCoconut)
+        Destroy(currentCarriable);  // Destroy the coconut if near the boat
+        Debug.Log("Coconut destroyed near the boat.");
+        currentCarriable = null;
+        isCarryingCoconut = false;
+    }
+    else if (isCarryingCoconut)
+    {
+        DropCarriable();  // Drop the object if the player is already carrying it
+    }
+    else
+    {
+        TryCarryCarriable();  // Try to pick up an object if the player isn't carrying one
+    }
+
+    // Ensure SwitchCoconutState is called
+    if (coconutScript != null)
+    {
+        coconutScript.SwitchCoconutState(isCarryingCoconut);
+    }
+    else
+    {
+        Debug.LogError("Coconut script is missing or not properly referenced.");
+    }
+}
+
+
+private bool IsNearBoat()
+{
+    // Attempt to find the boat if it's not already assigned
+    if (boat == null)
+    {
+        boat = GameObject.FindWithTag("Boat");
+
+        if (boat == null)
         {
-            DropCarriable();  // Drop the object if the player is already carrying it
+            Debug.LogWarning("Boat object not found in the scene.");  // Log if boat is still null
+            return false;
         }
         else
         {
-            TryCarryCarriable();  // Try to pick up an object if the player isn't carrying one
+            Debug.Log("Boat object found and assigned.");
         }
     }
 
+    float distanceToBoat = Vector3.Distance(player.transform.position, boat.transform.position);
+    Debug.Log("Distance to boat: " + distanceToBoat);  // Log the actual distance
+
+    if (distanceToBoat <= boatProximityThreshold)
+    {
+        Debug.Log("Player is within range of the boat.");  // Log if within proximity
+        return true;
+    }
+    else
+    {
+        Debug.Log("Player is NOT within range of the boat.");  // Log if out of proximity
+        return false;
+    }
+}
+
+
+
+
     public void TryCarryCarriable()
     {
-        // Check if there are two logs nearby
-
-        // Find the closest object tagged as "Carriable"
+        // Find the closest object tagged as "Coconut"
         GameObject[] carriables = GameObject.FindGameObjectsWithTag("Coconut");
         GameObject closestCarriable = null;
         float closestDistance = carryDistanceThreshold;
@@ -78,8 +141,6 @@ public class CarryCoconut : MonoBehaviour
         {
             Debug.Log("No carriable objects within range.");
         }
-
-
     }
 
     public void CarryCarriable(GameObject carriable)
@@ -94,13 +155,12 @@ public class CarryCoconut : MonoBehaviour
 
         // Move the object to the player's left hand position
         Debug.Log("Carrying object in left hand...");
-
         carriable.transform.position = leftHand.position;         // Set position to left hand
         carriable.transform.rotation = leftHand.rotation;         // Set rotation to match the left hand
         carriable.transform.SetParent(leftHand);                  // Attach the object to the left hand
 
         currentCarriable = carriable;  // Track the current carriable object
-        isCarryingCoconut = true;           // Update the state to reflect that the player is now carrying the object
+        isCarryingCoconut = true;      // Update the state to reflect that the player is now carrying the object
     }
 
     private void DropCarriable()
@@ -120,7 +180,7 @@ public class CarryCoconut : MonoBehaviour
             }
 
             currentCarriable = null;  // Reset current carriable object
-            isCarryingCoconut = false;     // Update the state to reflect that the player is no longer carrying an object
+            isCarryingCoconut = false; // Update the state to reflect that the player is no longer carrying an object
         }
     }
 }

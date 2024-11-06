@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class StandingTreeToFallenTree : MonoBehaviour
 {
-    public GameObject standingPalmTree;  // Assign the standing tree object in the inspector
-    public GameObject trunkPalmTree;      // Assign the fallen tree object in the inspector
-    public GameObject buildLog;           // Assign the log object in the inspector
-    public float interactDistance = 3f;   // Define how close the player must be to interact
-    private GameObject player;            // Reference to the player object
-    private EquipableR equipableScript;   // Reference to the EquipableR script on Axe_06
+    public GameObject standingPalmTree;    // Assign the standing tree object in the inspector
+    public GameObject trunkPalmTree;       // Assign the fallen tree object in the inspector
+    public GameObject buildLog;            // Assign the log object in the inspector
+    public float interactDistance = 3f;    // Define how close the player must be to interact
+    private GameObject player;             // Reference to the player object
+    private EquipableR equipableScript;    // Reference to the EquipableR script on Axe_06
+
+    private Tree treeScript;               // Reference to the Tree script on the standing tree
 
     void Start()
     {
         trunkPalmTree.SetActive(false);    // Ensure the trunk is initially inactive
-        buildLog.SetActive(false);          // Ensure the build log is initially inactive
+        buildLog.SetActive(false);         // Ensure the build log is initially inactive
         player = GameObject.FindWithTag("Player"); // Find the player in the scene
+
+        // Get the Tree script on the standing tree
+        treeScript = standingPalmTree.GetComponent<Tree>();
 
         // Find the Axe_06 object and get its EquipableR script
         GameObject axe = GameObject.FindWithTag("Equipable");
@@ -37,20 +42,26 @@ public class StandingTreeToFallenTree : MonoBehaviour
             // Check if the "E" key is pressed and Axe_06 is equipped
             if (Input.GetKeyDown(KeyCode.E) && equipableScript != null && equipableScript.IsEquipped())
             {
-                SwitchTreeState(); // Directly call the method to switch the tree state
+                SwitchTreeState(); // Call the tree's method to switch the state
             }
         }
     }
 
     public void SwitchTreeState()
     {
-        // Check if the standing tree is active
+        // If the standing tree is active, switch to the fallen state
         if (standingPalmTree.activeInHierarchy)
         {
             standingPalmTree.SetActive(false); // Disable standing tree
-            trunkPalmTree.SetActive(true);      // Activate fallen tree
-            buildLog.SetActive(true);           // Activate the log
+            trunkPalmTree.SetActive(true);     // Activate fallen tree
+            buildLog.SetActive(true);          // Activate the log
             Debug.Log("Tree state switched to fallen.");
+
+            // Call the Tree's SwitchTreeState method to hide the interaction text
+            if (treeScript != null)
+            {
+                treeScript.SwitchTreeState();
+            }
         }
     }
 }

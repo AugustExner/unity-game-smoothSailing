@@ -17,6 +17,8 @@ TagManager:
   - AxeBelt
   - Coconut
   - InteractionText
+  - Log
+  - Boat
   layers:
   - Default
   - TransparentFX
