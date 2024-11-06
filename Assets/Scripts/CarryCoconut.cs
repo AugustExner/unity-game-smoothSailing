@@ -6,7 +6,7 @@ public class CarryCoconut : MonoBehaviour
 {
     public GameObject player;                 // Reference to the player object
     public float carryDistanceThreshold = 3f; // Distance within which the player can carry the coconut
-    public float boatProximityThreshold = 2f; // Distance within which the player can interact with the boat
+    public float boatProximityThreshold = 3f; // Distance within which the player can interact with the boat
 
     private Transform leftHand;               // Reference to the left hand transform of the player
     public GameObject currentCarriable;       // Currently carried object

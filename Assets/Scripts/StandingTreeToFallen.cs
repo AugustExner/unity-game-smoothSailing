@@ -40,7 +40,7 @@ public class StandingTreeToFallenTree : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) <= interactDistance)
         {
             // Check if the "E" key is pressed and Axe_06 is equipped
-            if (Input.GetKeyDown(KeyCode.E) && equipableScript != null && equipableScript.IsEquipped())
+            if (Input.GetKeyUp(KeyCode.E) && equipableScript != null && equipableScript.IsEquipped())
             {
                 SwitchTreeState(); // Call the tree's method to switch the state
             }
