@@ -85,6 +85,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
+    <Compile Include="Assets\Scripts\Turtle\TurtleHealth.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\attackBoat.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\FloatObjectScript.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Other\Scripts\Underwater.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\#NVJOB Boids\Simple Boids\NVBoids.cs" />
+    <Compile Include="Assets\Scripts\MainMenuEvents.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
     <Compile Include="Assets\AQUAS-Lite\Scripts\AQUAS_Lite_CamNav.cs" />
@@ -159,6 +162,7 @@
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
     <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\Scripts\ToggleUIDocument.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\NVJOB Assets\FPS Counter\FPSCounter.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
@@ -202,6 +206,7 @@
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+    <None Include="Assets\UI Toolkit\MainMenuVisualTree.uxml" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
     <None Include="Assets\Polytope Studio\Lowpoly_Village\Sources\Shaders\PT_Buildings_Shader_PBR.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
@@ -220,6 +225,7 @@
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\UI Toolkit\MainMenuStyle.uss" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\NVJOB Assets\SC Shaders (Legacy)\SC Shader (Normalmap, Occlusion, Reflection, Cull Off).shader" />
     <None Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
