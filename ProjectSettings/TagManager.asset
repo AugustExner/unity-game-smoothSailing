@@ -16,6 +16,7 @@ TagManager:
   - CutableTree
   - AxeBelt
   - Coconut
+  - InteractionText
   layers:
   - Default
   - TransparentFX
