@@ -72,7 +72,7 @@ public class LogsToBoat : MonoBehaviour
         nearbyLogs.Add(gameObject);
 
         // Check if there are at least 2 logs nearby (including the current one)
-        bool logsNearby = nearbyLogs.Count >= 2;
+        bool logsNearby = nearbyLogs.Count >= 6;
         Debug.Log(logsNearby ? "Logs are nearby." : "Not enough logs nearby.");
         return logsNearby; // Must have at least 2 logs nearby
     }
