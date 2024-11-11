@@ -19,7 +19,7 @@ public class WaterEnemyFollow : MonoBehaviour
     public float walkPointRange;
 
     private bool isWalkPointSet;
-    private float patrolPointReachedThreshold = 5;
+    private float patrolPointReachedThreshold = 2;
     public LayerMask whatIsWater;
 
     // Start is called before the first frame update
