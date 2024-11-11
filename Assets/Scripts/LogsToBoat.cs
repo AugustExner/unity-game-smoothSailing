@@ -7,10 +7,11 @@ public class LogsToBoat : MonoBehaviour
     public GameObject Wood_BoatV1;               // Assign your Wood_BoatV1 prefab here
     public GameObject player;                    // Reference to the player object
     public GameObject boatSpawner;               // Reference to the BoatSpawner object
-    public float spawnProximityThreshold = 3f;   // Distance within which logs and player must be close to the BoatSpawner
+    public float spawnProximityThreshold = 10f;   // Distance within which logs and player must be close to the BoatSpawner
     public Transform boatSpawnLocation;          // Specific location inside BoatSpawner where the boat will spawn
     private static bool isBoatSpawned = false;   // Static to ensure only one boat is spawned
     private BuildLog buildLogScript;             // Reference to BuildLog script for hiding interaction text
+    public GameObject TransparentBoat;
 
     void Start()
     {
@@ -91,7 +92,7 @@ public class LogsToBoat : MonoBehaviour
         Vector3 spawnPosition = boatSpawnLocation.position;
 
         // Define the desired rotation for the boat (adjust these values as needed)
-        Quaternion boatRotation = Quaternion.Euler(0, 0, 0); // Example: Rotates the boat 90 degrees on the Y-axis
+        Quaternion boatRotation = Quaternion.Euler(0, 110, 0); // Example: Rotates the boat 90 degrees on the Y-axis
 
         // Instantiate the boat prefab at the specific spawn position within the BoatSpawner
         GameObject boat = Instantiate(Wood_BoatV1, spawnPosition, boatRotation);
@@ -102,6 +103,8 @@ public class LogsToBoat : MonoBehaviour
         {
             Destroy(log); // Destroy each nearby log
         }
+        GameObject transparentBoat = GameObject.FindGameObjectWithTag("TransparentBoat");
+        Destroy(transparentBoat);
 
         // Set the boat's parent to the BoatSpawner (optional, to keep hierarchy clean)
         boat.transform.SetParent(boatSpawner.transform);
