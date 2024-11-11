@@ -19,6 +19,7 @@ TagManager:
   - InteractionText
   - Log
   - Boat
+  - TransparentBoat
   layers:
   - Default
   - TransparentFX
