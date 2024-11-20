@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117f16775336a5d4ba724ebfad828f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: {fileID: 0}
+  tutorial: {fileID: 1585622352}
   pauseScreen: {fileID: 797758154}
   interactionBox: {fileID: 2034386066}
 --- !u!114 &191281737
