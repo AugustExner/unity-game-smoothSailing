@@ -3296,19 +3296,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.5
+      value: 114.58523
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.38
+      value: 13.017676
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.8
+      value: 29.400002
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3316,7 +3316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3351,6 +3351,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4622948576541377396, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1867000220}
+    - targetCorrespondingSourceObject: {fileID: 4622948576541377396, guid: 380e869112d5086468a3a3992e91109d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1867000226}
   m_SourcePrefab: {fileID: 100100000, guid: 380e869112d5086468a3a3992e91109d, type: 3}
 --- !u!1 &1867000212 stripped
 GameObject:
@@ -3369,8 +3372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe17edbb016a6334ead38b8e5120721f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInSight: 10
+  playerInSight: 0
   closestDistanceToPlayer: 5
+  dollyCart: {fileID: 1867000226}
   walkPointRange: 15
   whatIsWater:
     serializedVersion: 2
@@ -3382,7 +3386,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867000212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: -334000983
   m_Radius: 2.5870433
   m_Speed: 1.5
@@ -3412,6 +3416,23 @@ MonoBehaviour:
   attackDamage: 1
   attackRange: 4
   attackCooldown: 2
+--- !u!114 &1867000226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867000212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Path: {fileID: 8910091835612710952, guid: 929322b2f085a4049a53dfb2ceb13871, type: 3}
+  m_UpdateMethod: 1
+  m_PositionUnits: 1
+  m_Speed: 2
+  m_Position: 0
 --- !u!1 &1928662309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 93b8889cd57dbaf46b48cb5a9155ef08, type: 3}
