@@ -51,21 +51,21 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 1
   m_Waypoints:
-  - position: {x: -6.214775, y: 0, z: -5}
+  - position: {x: -6.214775, y: -2.8, z: -5}
     tangent: {x: 1, y: 0, z: 0}
     roll: 0
-  - position: {x: 0, y: 0, z: 9.898163}
+  - position: {x: 0, y: -2.8, z: 9.898163}
     tangent: {x: 1.4123993, y: 0, z: 0}
     roll: 0
-  - position: {x: 5.045067, y: 0, z: 10.999355}
+  - position: {x: 5.045067, y: -2.8, z: 10.999355}
     tangent: {x: 1.4123993, y: 0, z: 0}
     roll: 0
-  - position: {x: 8.193787, y: 0, z: 5}
+  - position: {x: 8.193787, y: -2.8, z: 5}
     tangent: {x: 1.4123993, y: 0, z: 0}
     roll: 0
-  - position: {x: 9.606186, y: 0, z: -2.123335}
+  - position: {x: 9.606186, y: -2.8, z: -2.123335}
     tangent: {x: 1.4123993, y: 0, z: 0}
     roll: 0
-  - position: {x: 0.14292908, y: 0, z: -8.024975}
+  - position: {x: 0.14292908, y: -2.8, z: -8.024975}
     tangent: {x: -8.564522, y: 0, z: -1.5148392}
     roll: 0
