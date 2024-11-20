@@ -10,6 +10,7 @@ public class EnemyFollow : MonoBehaviour
 
     public float playerInSight;
     public float closestDistanceToPlayer;
+    public float distanceToATurtle;
 
     private float distanceToPlayer;
 
@@ -19,6 +20,8 @@ public class EnemyFollow : MonoBehaviour
     private bool isWalkPointSet;
     private float patrolPointReachedThreshold = 5; 
     public LayerMask whatIsWater;
+
+    public AllTurtles allTurtles;
 
 
     // Start is called before the first frame update
@@ -31,13 +34,31 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Calculate distance to the player
-        distanceToPlayer = Vector3.Distance(agent.transform.position, player.position);
+
+        GameObject closestsTurtle = null;
+        float lowestDistanceToTurtle = 0;
+        foreach(GameObject turtle in allTurtles.GetTurtlesList())
+        {
+            float distance = GetDistance(turtle.transform.position);
+            if (distance < lowestDistanceToTurtle)
+            {
+                lowestDistanceToTurtle = distance;
+                closestsTurtle = turtle;
+            }
+
+        }
 
         // If the player is not too close and within sight, chase them; otherwise, patrol
-        if (distanceToPlayer > closestDistanceToPlayer && distanceToPlayer <= playerInSight)
+        if (GetDistance(player.position) > closestDistanceToPlayer && distanceToPlayer <= playerInSight)
         {
-            GoToPlayer();
+            GoToObject(player.position);
+        }  
+        if (lowestDistanceToTurtle < distanceToATurtle)
+        {
+            if (closestsTurtle != null)
+            {
+                GoToObject(closestsTurtle.transform.position);
+            }
         }
         else
         {
@@ -45,10 +66,16 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void GoToPlayer()
+    private float GetDistance(Vector3 pos)
     {
-        agent.SetDestination(player.position);
+        return Vector3.Distance(agent.transform.position, pos);
     }
+
+    private void GoToObject(Vector3 obj)
+    {
+        agent.SetDestination(obj);
+    }
+
 
     private void Patrol()
     {

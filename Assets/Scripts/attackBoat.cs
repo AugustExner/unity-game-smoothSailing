@@ -10,12 +10,17 @@ public class AttackBoat : MonoBehaviour
     private NavMeshAgent shark;
     private GameObject player;
 
+    [SerializeField] private AudioClip sharkAttackClip;
+    [SerializeField] private AudioClip sharkAttackTurtleClip;
+
 
     public int attackDamage = 5;
     public float attackRange = 3f;
     public float attackCooldown = 10f;  // Cooldown duration 
     private float distanceToPlayer;
     private float lastAttackTime = 0f;  // Time of the last attack
+
+    public AllTurtles allTurtles;
 
 
     // Start is called before the first frame update
@@ -29,10 +34,28 @@ public class AttackBoat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetDistanceToPlayer();
+
+        GameObject closestsTurtle = null;
+        float lowestDistanceToTurtle = 1000;
+        List<GameObject> list = allTurtles.GetTurtlesList();
+        {
+            foreach (GameObject turtle in list)
+            {
+                if (turtle != null)
+                {
+                    float distance = GetDistance(turtle.transform.position);
+                    if (distance < lowestDistanceToTurtle)
+                    {
+                        lowestDistanceToTurtle = distance;
+                        closestsTurtle = turtle;
+                    }
+                }
+
+            }
+        }
 
         // Check if within range and if cooldown period has passed
-        if (distanceToPlayer < attackRange && Time.time >= lastAttackTime + attackCooldown)
+        if (GetDistance(player.transform.position) < attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             //Debug.Log("Distance to player: " + (distanceToPlayer < attackRange));
 
@@ -43,12 +66,25 @@ public class AttackBoat : MonoBehaviour
             //Debug.Log("Time.deltaTime: " + Time.deltaTime);
 
         }
+
+        if (lowestDistanceToTurtle < attackRange && Time.time >= lastAttackTime + attackCooldown)
+        {
+            DamageTurtle(closestsTurtle);
+            lastAttackTime = Time.time;
+        }
     }
 
-    void GetDistanceToPlayer()
+    private float GetDistance(Vector3 pos)
     {
-        // Calculate distance to the player
-        distanceToPlayer = Vector3.Distance(shark.transform.position, player.transform.position);
+        return Vector3.Distance(shark.transform.position, pos);
+    }
+
+    void DamageTurtle(GameObject turtle)
+    {
+        TurtleHealth turtleHealth = turtle.GetComponent<TurtleHealth>();
+        turtleHealth.TakeDamage(attackDamage);
+        Debug.Log("Attempted to eat turtle");
+        SoundFXManager.instance.PlaySoundFXClip(sharkAttackTurtleClip, transform, 0.3f);
     }
 
     void DamagePlayer()
@@ -58,6 +94,7 @@ public class AttackBoat : MonoBehaviour
         {
             Debug.Log("Attack Player");
             playerHealth.TakeDamage(attackDamage);
+            SoundFXManager.instance.PlaySoundFXClip(sharkAttackClip, transform, 0.3f);
         }
         else { Debug.Log("no enemey attacked"); 
         }

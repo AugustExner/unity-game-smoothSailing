@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
     public CoconutCounter coconutCounter;
     public GameObject coconutObject;
 
+
+    [SerializeField] private AudioClip coconutSpawnSound;
+
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -39,6 +42,8 @@ public class PlayerAttack : MonoBehaviour
     {
         Vector3 spawnPosition = transform.position - (-transform.right * 2.2f);
         Instantiate(coconutObject, spawnPosition, Quaternion.identity);
+
+        SoundFXManager.instance.PlaySoundFXClip(coconutSpawnSound, transform, 1f);
     }
 }
 

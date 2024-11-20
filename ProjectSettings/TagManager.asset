@@ -6,6 +6,20 @@ TagManager:
   tags:
   - CinemachineTarget
   - Enemy
+  - Water
+  - Turtle
+  - Coconut
+  - Carriable
+  - logPalmTree
+  - CutableTree
+  - Boat
+  - LeftHand
+  - RightHand
+  - AxeBelt
+  - TransparentBoat
+  - Equipable
+  - InteractionText
+  - InteractionBox
   layers:
   - Default
   - TransparentFX

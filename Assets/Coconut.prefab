@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8745648823254972091}
   - component: {fileID: 8113692894265919595}
   - component: {fileID: 8416993149548876704}
+  - component: {fileID: -9042833928176402763}
   m_Layer: 0
   m_Name: Coconut
-  m_TagString: Untagged
+  m_TagString: Coconut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,3 +151,16 @@ MonoBehaviour:
   floatThreshold: 2
   waterDensity: 0.125
   downForce: 1
+--- !u!114 &-9042833928176402763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836444699452762500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c211c7159872424d98a13f6e7c90bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shark: {fileID: 7204273411259607760, guid: 56f087a3f75bf934c9de17d30f6eeff8, type: 3}
