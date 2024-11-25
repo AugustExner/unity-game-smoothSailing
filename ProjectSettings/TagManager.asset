@@ -20,6 +20,8 @@ TagManager:
   - Equipable
   - InteractionText
   - InteractionBox
+  - EnemyTrack
+  - CoconutCounter
   layers:
   - Default
   - TransparentFX

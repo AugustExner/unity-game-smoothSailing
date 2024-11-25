@@ -3643,6 +3643,7 @@ MonoBehaviour:
   tutorial: {fileID: 0}
   pauseScreen: {fileID: 1799450183}
   interactionBox: {fileID: 0}
+  islandMusic: {fileID: 0}
 --- !u!114 &885352301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5256,6 +5257,16 @@ PlayableDirector:
     value: {fileID: 419014203}
   - key: {fileID: -1349912792187347786, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
     value: {fileID: 812291840}
+  - key: {fileID: 1151101454039943650, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
+    value: {fileID: 419014203}
+  - key: {fileID: -1156140321236204840, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
+    value: {fileID: 419014203}
+  - key: {fileID: -5718084401192821304, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
+    value: {fileID: 419014203}
+  - key: {fileID: 8006498476621997913, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
+    value: {fileID: 419014203}
+  - key: {fileID: -5450969469084414205, guid: 1267af7a0d611ef4b8c53fcb1a69d262, type: 2}
+    value: {fileID: 419014203}
   m_ExposedReferences:
     m_References:
     - 6ee7400308b9d8645aee07e3c7874bf5: {fileID: 419014202}

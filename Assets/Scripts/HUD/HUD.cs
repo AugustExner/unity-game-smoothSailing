@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
@@ -9,19 +8,7 @@ public class HUD : MonoBehaviour
     public GameObject tutorial;
     public GameObject pauseScreen;
     public GameObject interactionBox;
-
-    private BoatController boatController;
-    private bool isPaused = false;
-
-    private void Awake()
-    {
-        // Locate the "Wood_BoatV1" child and get the BoatController component
-        GameObject woodBoat = GameObject.Find("Wood_BoatV1");
-        if (woodBoat != null)
-        {
-            boatController = woodBoat.GetComponent<BoatController>();
-        }
-    }
+    public GameObject islandMusic;
 
     // Update is called once per frame
     void Update()
@@ -29,57 +16,30 @@ public class HUD : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             tutorial.SetActive(false);
-            Debug.Log("Enter");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (isPaused)
-            {
-                Continue();
-            }
-            else
-            {
-                Pause();
-                isPaused = true;
-            }
+            Pause();
         }
     }
+
 
     public void Pause()
     {
         Cursor.visible = true;
         pauseScreen.SetActive(true);
-        if (interactionBox)
-        {
-            interactionBox.SetActive(false);
-        }
+        interactionBox.SetActive(false);
         Time.timeScale = 0;
-
-
-        //Deactivate BoatController
-        if (boatController != null)
-        {
-            boatController.enabled = false;
-        }
+        islandMusic.SetActive(false);
     }
 
     public void Continue()
     {
-        isPaused = false;
         pauseScreen.SetActive(false);
-        if (interactionBox)
-        {
-            interactionBox.SetActive(true);
-        }
+        interactionBox.SetActive(true);
+        islandMusic.SetActive(true);
         Time.timeScale = 1;
         Cursor.visible = true;
-
-
-        // Reactivate BoatController 
-        if (boatController != null)
-        {
-            boatController.enabled = true;
-        }
     }
 }

@@ -7,5 +7,6 @@ public class PlayResetThings : MonoBehaviour
     public void ResetTutorials()
     {
         PlayerPrefs.SetInt("tutorialNumber", 0);
+        PlayerPrefs.SetInt("CoconutCounter", 0);
     }
 }

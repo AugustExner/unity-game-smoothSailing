@@ -131,6 +131,7 @@
     <Compile Include="Assets\Scripts\WaterEnemyFollow.cs" />
     <Compile Include="Assets\Scripts\TransparentBoat.cs" />
     <Compile Include="Assets\Scripts\EquipableR.cs" />
+    <Compile Include="Assets\Scripts\HelpingTextScript.cs" />
     <Compile Include="Assets\Scripts\BoomRotation.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Assets\Scripts\LogsToBoat.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\TutorialStart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\BuildLog.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly_Demos\Environment_Free\Helpers\MouseLook.cs" />
@@ -182,6 +184,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\EndIntroScript.cs" />
     <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\Scripts\CoconutHelpScript.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\#NVJOB Boids\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
     <Compile Include="Assets\Scripts\HUD\HUD.cs" />

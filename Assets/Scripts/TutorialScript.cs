@@ -7,13 +7,13 @@ using UnityEngine;
 public class TutorialScript : MonoBehaviour
 {
     public TextMeshProUGUI mText;
-    //private int mIndex = 0;
+    private int mIndex = 0;
 
-    string[] tutorials = { "Press 'A' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.", 
-                           "World",
-                           "Unity", 
-                           "C#", 
-                           "TextMeshPro" 
+    string[] tutorials = { "Escape the island by building a boat. Collect coconuts for the trip!. \r\n\nMove on 'WASD'. \r\n\nUse 'E' to interact with objects.",
+                           "Press 'A' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.",
+                           "Unity",
+                           "C#",
+                           "TextMeshPro"
     };
 
     public GameObject tutorial;
@@ -25,7 +25,8 @@ public class TutorialScript : MonoBehaviour
         {
             SetText(PlayerPrefs.GetInt("tutorialNumber"));
         }
-        else {
+        else
+        {
             PlayerPrefs.SetInt("tutorialNumber", 0);
         }
 
@@ -36,7 +37,7 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         SetText(PlayerPrefs.GetInt("tutorialNumber"));
- 
+
     }
 
     void SetText(int index)
@@ -45,7 +46,8 @@ public class TutorialScript : MonoBehaviour
     }
 
 
-    public void SetTutorial(int index) {
+    public void SetTutorial(int index)
+    {
         tutorial.SetActive(true);
         PlayerPrefs.SetInt("tutorialNumber", index);
     }

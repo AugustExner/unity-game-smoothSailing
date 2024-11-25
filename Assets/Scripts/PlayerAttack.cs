@@ -15,8 +15,14 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        currentAmmo = maxAmmo;
-        coconutCounter.SetCoconuts(maxAmmo);
+        if (PlayerPrefs.HasKey("CoconutCounter"))
+        {
+            currentAmmo = PlayerPrefs.GetInt("CoconutCounter");
+        } else
+        {
+            currentAmmo = maxAmmo;
+        }
+        coconutCounter.SetCoconuts(currentAmmo);
     }
 
     // Update is called once per frame
@@ -28,7 +34,6 @@ public class PlayerAttack : MonoBehaviour
             UseCoconut();
             SpawnCoconut();
         }
-
     }
 
     void UseCoconut()

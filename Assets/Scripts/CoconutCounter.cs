@@ -22,4 +22,9 @@ public class CoconutCounter : MonoBehaviour
         Debug.Log(total);
         coconuts.text = total.ToString();
     }
+
+    public int GetCoconuts()
+    {
+        return total;
+    }
 }

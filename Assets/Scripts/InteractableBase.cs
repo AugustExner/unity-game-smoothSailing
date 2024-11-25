@@ -12,7 +12,7 @@ public class InteractableBase : MonoBehaviour
     private static GameObject interactionImage; // Static to ensure only one instance controls the UI
 
     public float interactionDistance = 3f;  // Distance to show prompt
-    private static InteractableBase currentInteractable; // Track the current interactable in range
+    public InteractableBase currentInteractable; // Track the current interactable in range
     public GameObject player;  // Reference to the player object
 
     protected virtual void Start()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarryCoconut : MonoBehaviour
 {
@@ -50,70 +51,76 @@ public class CarryCoconut : MonoBehaviour
         }
     }
 
-private void TryToggleCarriable()
-{
-    if (isCarryingCoconut && IsNearBoat())  // Ensure IsNearBoat() is called here
+    private void TryToggleCarriable()
     {
-        Debug.Log("Coconut destroyed near the boat.");
-        currentCarriable = null;
-        isCarryingCoconut = false;
-        coconutCounter.IncrementCoconuts();
-        Destroy(gameObject);  // Destroy the coconut if near the boat
+        if (isCarryingCoconut && IsNearBoat())  // Ensure IsNearBoat() is called here
+        {
+            Debug.Log("Coconut destroyed near the boat.");
+            currentCarriable = null;
+            isCarryingCoconut = false;
+            coconutCounter.IncrementCoconuts();
+            Destroy(gameObject);  // Destroy the coconut if near the boat
 
         }
-    else if (isCarryingCoconut)
-    {
-        DropCarriable();  // Drop the object if the player is already carrying it
-    }
-    else
-    {
-        TryCarryCarriable();  // Try to pick up an object if the player isn't carrying one
-    }
-
-    // Ensure SwitchCoconutState is called
-    if (coconutScript != null)
-    {
-        coconutScript.SwitchCoconutState(isCarryingCoconut);
-    }
-    else
-    {
-        Debug.LogError("Coconut script is missing or not properly referenced.");
-    }
-}
-
-
-private bool IsNearBoat()
-{
-    // Attempt to find the boat if it's not already assigned
-    if (boat == null)
-    {
-        boat = GameObject.FindWithTag("Boat");
-
-        if (boat == null)
+        else if (isCarryingCoconut)
         {
-            Debug.LogWarning("Boat object not found in the scene.");  // Log if boat is still null
-            return false;
+            DropCarriable();  // Drop the object if the player is already carrying it
+        }
+        else if (!isCarryingCoconut && coconutCounter.GetCoconuts() >= 2)
+        {
+            PlayerPrefs.SetInt("CoconutCounter", coconutCounter.GetCoconuts());
+            SceneManager.LoadScene(3);
         }
         else
         {
-            Debug.Log("Boat object found and assigned.");
+            TryCarryCarriable();  // Try to pick up an object if the player isn't carrying one
+        }
+
+        // Ensure SwitchCoconutState is called
+        if (coconutScript != null)
+        {
+            coconutScript.SwitchCoconutState(isCarryingCoconut);
+        }
+        else
+        {
+            Debug.LogError("Coconut script is missing or not properly referenced.");
+        }
+
+    }
+
+
+    private bool IsNearBoat()
+    {
+        // Attempt to find the boat if it's not already assigned
+        if (boat == null)
+        {
+            boat = GameObject.FindWithTag("Boat");
+
+            if (boat == null)
+            {
+                Debug.LogWarning("Boat object not found in the scene.");  // Log if boat is still null
+                return false;
+            }
+            else
+            {
+                Debug.Log("Boat object found and assigned.");
+            }
+        }
+
+        float distanceToBoat = Vector3.Distance(transform.position, boat.transform.position);
+        Debug.Log("Distance to boat: " + distanceToBoat);  // Log the actual distance
+
+        if (distanceToBoat <= boatProximityThreshold)
+        {
+            Debug.Log("Player is within range of the boat.");  // Log if within proximity
+            return true;
+        }
+        else
+        {
+            Debug.Log("Player is NOT within range of the boat.");  // Log if out of proximity
+            return false;
         }
     }
-
-    float distanceToBoat = Vector3.Distance(transform.position, boat.transform.position);
-    Debug.Log("Distance to boat: " + distanceToBoat);  // Log the actual distance
-
-    if (distanceToBoat <= boatProximityThreshold)
-    {
-        Debug.Log("Player is within range of the boat.");  // Log if within proximity
-        return true;
-    }
-    else
-    {
-        Debug.Log("Player is NOT within range of the boat.");  // Log if out of proximity
-        return false;
-    }
-}
 
 
 

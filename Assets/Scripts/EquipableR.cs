@@ -17,34 +17,10 @@ public class EquipableR : MonoBehaviour
     {
         // Get the right hand and axe belt transforms
         rightHand = GameObject.FindGameObjectWithTag("RightHand").transform;
-        //axeBelt = GameObject.FindGameObjectWithTag("AxeBelt").transform;
-
-        //// Get the CarryLogs script from the player
-        //carryLogsScript = player.GetComponent<CarryLogs>();
-
-        //if (carryLogsScript == null)
-        //{
-        //    Debug.LogError("CarryLogs script not found on the player. Ensure the player GameObject has a CarryLogs component.");
-        //}
     }
 
     void Update()
     {
-        //// Check if the player is carrying a log, and set axe position accordingly
-        //if (isEquipped && carryLogsScript != null)
-        //{
-        //Debug.Log("carryLogsScript is assigned: " + (carryLogsScript != null));
-        //Debug.Log("isCarryingLog status: " + carryLogsScript.isCarryingLog);
-        //    if (carryLogsScript.isCarryingLog)
-        //    {
-        //        MoveAxeToBelt();
-        //    }
-        //    else
-        //    {
-        //        MoveAxeToRightHand();
-        //    }
-        //}
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             TryToggleEquipable();
@@ -101,8 +77,6 @@ private void EquipEquipable(GameObject equipable)
         MoveAxeToRightHand();
     }
 }
-
-
 
     private void MoveAxeToRightHand()
     {

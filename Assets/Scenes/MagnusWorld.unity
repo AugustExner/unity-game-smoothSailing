@@ -4433,9 +4433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117f16775336a5d4ba724ebfad828f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: {fileID: 0}
+  tutorial: {fileID: 562564099}
   pauseScreen: {fileID: 1564669539}
   interactionBox: {fileID: 0}
+  islandMusic: {fileID: 0}
 --- !u!1 &1202276635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4687,6 +4688,7 @@ GameObject:
   - component: {fileID: 1230564155}
   - component: {fileID: 1230564154}
   - component: {fileID: 1230564157}
+  - component: {fileID: 1230564158}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -4780,6 +4782,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc08f8a46f06cb4e9bc6c9c7d753bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1230564158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230564153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad642ae9a824e642a6608e6f7aba174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialScript: {fileID: 1255752560}
+  tutorialNumber: 1
 --- !u!1 &1250343374
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,7 +4983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mText: {fileID: 995157188}
-  tutorial: {fileID: 0}
+  tutorial: {fileID: 562564099}
 --- !u!114 &1255752561
 MonoBehaviour:
   m_ObjectHideFlags: 0
