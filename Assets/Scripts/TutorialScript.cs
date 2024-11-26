@@ -36,7 +36,6 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         SetText(PlayerPrefs.GetInt("tutorialNumber"));
- 
     }
 
     void SetText(int index)

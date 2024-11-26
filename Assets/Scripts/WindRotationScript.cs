@@ -56,7 +56,8 @@ public class WindRotationScript : MonoBehaviour
     void SetRandomWindDirection()
     {
         // Pick a random new wind direction
-        targetWindDirectionAngle = Random.Range(0f, 360f);
+        targetWindDirectionAngle = windDirectionAngle;
+        //targetWindDirectionAngle = Random.Range(0f, 360f);
 
         // Set a random interval for the next change
         timeUntilNextChange = Random.Range(minChangeInterval, maxChangeInterval);

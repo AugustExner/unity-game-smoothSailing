@@ -20,11 +20,13 @@ TagManager:
   - Equipable
   - InteractionText
   - InteractionBox
+  - EnemyTrack
+  - Stone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SharkLayer
   - Water
   - UI
   - 

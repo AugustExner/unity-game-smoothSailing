@@ -9,11 +9,12 @@ public class HUD : MonoBehaviour
     public GameObject tutorial;
     public GameObject pauseScreen;
     public GameObject interactionBox;
+    public GameObject music;
 
     private BoatController boatController;
     private bool isPaused = false;
 
-    private void Awake()
+    private void Start()
     {
         // Locate the "Wood_BoatV1" child and get the BoatController component
         GameObject woodBoat = GameObject.Find("Wood_BoatV1");
@@ -62,6 +63,7 @@ public class HUD : MonoBehaviour
         {
             boatController.enabled = false;
         }
+        music.SetActive(false);
     }
 
     public void Continue()
@@ -74,7 +76,7 @@ public class HUD : MonoBehaviour
         }
         Time.timeScale = 1;
         Cursor.visible = true;
-
+        music.SetActive(true);
 
         // Reactivate BoatController 
         if (boatController != null)
