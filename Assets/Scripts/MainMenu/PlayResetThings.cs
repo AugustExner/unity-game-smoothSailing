@@ -8,5 +8,6 @@ public class PlayResetThings : MonoBehaviour
     {
         PlayerPrefs.SetInt("tutorialNumber", 0);
         PlayerPrefs.SetInt("CoconutCounter", 0);
+        Time.timeScale = 1;
     }
 }
