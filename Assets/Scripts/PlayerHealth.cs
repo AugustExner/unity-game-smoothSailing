@@ -14,8 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     private Animator animator;
 
-    public HUD HUD;
-
 
 
     private void Awake()
@@ -44,9 +42,10 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(1);
         }
 
+        Debug.Log(currentHealth);
         if (currentHealth <= 0) {
             //Activate Game Over screen 
-            HUD.GameOver();
+            GameOver();
         }
     }
 
@@ -56,6 +55,21 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
     }
+
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+
+        //Deactivate BoatController
+        if (boatController != null)
+        {
+            boatController.enabled = false;
+        }
+    }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
