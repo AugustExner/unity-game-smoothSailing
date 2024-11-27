@@ -38056,7 +38056,7 @@ MonoBehaviour:
   currentHealth: 0
   gameOverScreen: {fileID: 1135466218}
   healthBar: {fileID: 1708037496}
-  HUD: {fileID: 0}
+  HUD: {fileID: 1135466223}
 --- !u!114 &1928662326
 MonoBehaviour:
   m_ObjectHideFlags: 0
