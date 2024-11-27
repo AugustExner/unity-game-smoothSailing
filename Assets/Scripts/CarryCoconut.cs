@@ -18,6 +18,10 @@ public class CarryCoconut : MonoBehaviour
 
     public CoconutCounter coconutCounter;
 
+    public LogsToBoat logsToBoat;
+
+
+
     void Start()
     {
         // Find the left hand GameObject of the player
@@ -40,6 +44,11 @@ public class CarryCoconut : MonoBehaviour
         {
             Debug.LogError("Boat GameObject not found! Make sure the 'Boat' GameObject is present in the scene.");
         }
+
+        if (logsToBoat == null)
+        {
+            Debug.LogError("LogsToBoat Script not found!");
+        }
     }
 
     void Update()
@@ -53,7 +62,7 @@ public class CarryCoconut : MonoBehaviour
 
     private void TryToggleCarriable()
     {
-        if (isCarryingCoconut && IsNearBoat())  // Ensure IsNearBoat() is called here
+        if (isCarryingCoconut && IsNearBoat() && logsToBoat.IsBoatSpawned())  // Ensure IsNearBoat() is called here
         {
             Debug.Log("Coconut destroyed near the boat.");
             currentCarriable = null;
@@ -62,14 +71,14 @@ public class CarryCoconut : MonoBehaviour
             Destroy(gameObject);  // Destroy the coconut if near the boat
 
         }
-        else if (isCarryingCoconut)
-        {
-            DropCarriable();  // Drop the object if the player is already carrying it
-        }
-        else if (!isCarryingCoconut && coconutCounter.GetCoconuts() >= 2)
+        else if (!isCarryingCoconut && coconutCounter.GetCoconuts() >= 2 && logsToBoat.IsBoatSpawned() && PlayerNearBoat())
         {
             PlayerPrefs.SetInt("CoconutCounter", coconutCounter.GetCoconuts());
             SceneManager.LoadScene(3);
+        }
+        else if (isCarryingCoconut)
+        {
+            DropCarriable();  // Drop the object if the player is already carrying it
         }
         else
         {
@@ -120,6 +129,22 @@ public class CarryCoconut : MonoBehaviour
             Debug.Log("Player is NOT within range of the boat.");  // Log if out of proximity
             return false;
         }
+    }
+
+    bool PlayerNearBoat()
+    {
+        float distanceToBoat = Vector3.Distance(player.transform.position, boat.transform.position);
+        if (distanceToBoat <= boatProximityThreshold)
+        {
+            Debug.Log("Player is within range of the boat.");  // Log if within proximity
+            return true;
+        }
+        else
+        {
+            Debug.Log("Player is NOT within range of the boat.");  // Log if out of proximity
+            return false;
+        }
+
     }
 
 

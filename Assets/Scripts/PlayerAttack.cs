@@ -45,8 +45,8 @@ public class PlayerAttack : MonoBehaviour
 
     void SpawnCoconut()
     {
-        Vector3 spawnPosition = transform.position - (-transform.right * 2.2f);
-        Instantiate(coconutObject, spawnPosition, Quaternion.identity);
+        Vector3 spawnPosition = transform.position - (-transform.right * 2.4f);
+        Instantiate(coconutObject, spawnPosition, Random.rotation);
 
         SoundFXManager.instance.PlaySoundFXClip(coconutSpawnSound, transform, 1f);
     }

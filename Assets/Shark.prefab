@@ -151,6 +151,7 @@ MonoBehaviour:
     m_Bits: 16
   distanceToATurtle: 5
   allTurtles: {fileID: 0}
+  dollyCart: {fileID: 0}
 --- !u!114 &2820626803899308524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,10 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beedde9a78b4826499df434e38176283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharkAttackClip: {fileID: 0}
+  sharkAttackTurtleClip: {fileID: 0}
   attackDamage: 5
   attackRange: 3
   attackCooldown: 10
-  distanceToATurtle: 0
   allTurtles: {fileID: 0}
 --- !u!114 &3461405862685365464
 MonoBehaviour:
@@ -180,3 +182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa1fa473f1bdaf45ad50afe698e77db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunItem: {fileID: 0}

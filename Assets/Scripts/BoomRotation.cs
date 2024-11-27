@@ -40,6 +40,8 @@ public class BoomRotation : MonoBehaviour
     float movementFactor;
     bool isStalled = false;
 
+    float testTarget = 0f;
+
 
     bool isInWater = false;
 
@@ -80,6 +82,7 @@ public class BoomRotation : MonoBehaviour
         {
             // Starboard Side
             // Rotate around the mast at the clamped angle
+            //test = Mathf.LerpAngle(test, currentAngle, 1f *Time.deltaTime);
             BoomPivot.transform.localRotation = Quaternion.Euler(0, -currentAngle, 0);
         }
         else
@@ -88,6 +91,7 @@ public class BoomRotation : MonoBehaviour
             // Rotate around the mast at the clamped angle
             BoomPivot.transform.localRotation = Quaternion.Euler(0, currentAngle, 0);
         }
+        //testTarget = Mathf.LerpAngle(testTarget, )
 
         Speed();
         updateWindDirection();

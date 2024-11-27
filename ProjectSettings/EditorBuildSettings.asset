@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutable tree.unity
     guid: ad80f8fc6c71fc44ba95b0892dd7de84
   - enabled: 1
-    path: Assets/Scenes/MagnusWorld.unity
+    path: Assets/Scenes/NotInUse/MagnusWorldOld.unity
     guid: 5154c7fad9632114dac1db5eb2f0baa7
   m_configObjects: {}

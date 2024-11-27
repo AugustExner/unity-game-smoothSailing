@@ -8,59 +8,43 @@ public class WindRotationScript : MonoBehaviour
 
 
     // Wind direction angle in degrees (0 to 360)
-    public float windDirectionAngle = 0f;
-
-    // Time until the next random wind change
-    private float timeUntilNextChange = 0f;
-
-    // Minimum and maximum time between wind changes
-    public float minChangeInterval = 2f;
-    public float maxChangeInterval = 5f;
-
+    private float windDirectionAngle = 0f;
     // Speed of the wind change (how quickly it transitions to the new direction)
-    public float windChangeSpeed = 30f;
-
+    private float windChangeSpeed = 1f;
     // Target angle for random wind change
-    private float targetWindDirectionAngle;
+    public float targetWindDirectionAngle;
 
-    void Start()
+    private Transform player;
+
+    private void Start()
     {
-        // Initialize with a random target wind direction
-        SetRandomWindDirection();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
     {
+
         // Change wind direction gradually towards the target
-        ChangeWindDirectionRandomly();
+        ChangeWindDirection();
 
         // Rotate the object to reflect the current wind direction
         RotateWindIndicator(windDirectionAngle);
+
+        //Change wind based on player position
+        changeWindBasedOnPlayer(player);
     }
 
-    void ChangeWindDirectionRandomly()
+    void ChangeWindDirection()
     {
-        // Check if it's time to change wind direction
-        timeUntilNextChange -= Time.deltaTime;
-
-        // If it's time, pick a new random direction and reset the interval
-        if (timeUntilNextChange <= 0)
-        {
-            SetRandomWindDirection();
-        }
-
         // Gradually rotate towards the target wind direction
         windDirectionAngle = Mathf.LerpAngle(windDirectionAngle, targetWindDirectionAngle, windChangeSpeed * Time.deltaTime);
     }
 
-    void SetRandomWindDirection()
+    public void SetWindDirectionAngle(float windAngle)
     {
-        // Pick a random new wind direction
-        targetWindDirectionAngle = Random.Range(0f, 360f);
-
-        // Set a random interval for the next change
-        timeUntilNextChange = Random.Range(minChangeInterval, maxChangeInterval);
+        targetWindDirectionAngle = windAngle;
     }
+
 
 
     public void RotateWindIndicator(float angle)
@@ -73,5 +57,23 @@ public class WindRotationScript : MonoBehaviour
     public float getWindDirectionAngle()
     {
         return windDirectionAngle;
+    }
+
+    void changeWindBasedOnPlayer(Transform player)
+    {
+        if (player.position.x > 195) {
+            targetWindDirectionAngle = 90;
+        }
+
+        if (player.position.x > 440)
+        {
+            targetWindDirectionAngle = 45;
+        }
+
+        if (player.position.x > 538)
+        {
+            targetWindDirectionAngle = 135;
+        }
+
     }
 }

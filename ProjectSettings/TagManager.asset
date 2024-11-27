@@ -22,11 +22,12 @@ TagManager:
   - InteractionBox
   - EnemyTrack
   - CoconutCounter
+  - Stone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Shark
   - Water
   - UI
   - 

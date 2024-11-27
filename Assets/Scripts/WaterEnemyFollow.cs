@@ -77,7 +77,7 @@ public class WaterEnemyFollow : MonoBehaviour
             if (closestsTurtle != null)
             {
                 GoToObject(closestsTurtle.transform.position);
-                Debug.Log("Going to Turtle");
+                //Debug.Log("Going to Turtle");
                 //Debug.Log(closestsTurtle);
             }
         }
@@ -102,7 +102,7 @@ public class WaterEnemyFollow : MonoBehaviour
     private void ActivatePatrol()
     {
         distanceToPatrolPoint = Vector3.Distance(lastPatrolpoint, transform.position);
-        Debug.Log("distance to Patrol Point: " + distanceToPatrolPoint);
+        //Debug.Log("distance to Patrol Point: " + distanceToPatrolPoint);
 
         if (dollyCart.enabled == false && isPatrolpointStored)
         {

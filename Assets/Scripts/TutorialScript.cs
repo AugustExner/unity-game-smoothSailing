@@ -7,7 +7,6 @@ using UnityEngine;
 public class TutorialScript : MonoBehaviour
 {
     public TextMeshProUGUI mText;
-    private int mIndex = 0;
 
     string[] tutorials = { "Escape the island by building a boat. Collect coconuts for the trip!. \r\n\nMove on 'WASD'. \r\n\nUse 'E' to interact with objects.",
                            "Press 'A' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.",

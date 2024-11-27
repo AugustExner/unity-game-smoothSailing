@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
+using UnityEngine.SceneManagement;
 
 public class LogsToBoat : MonoBehaviour
 {
@@ -14,13 +15,21 @@ public class LogsToBoat : MonoBehaviour
     private BuildLog buildLogScript;             // Reference to BuildLog script for hiding interaction text
     public GameObject TransparentBoat;
 
+    private CoconutCounter coconutCounter;
+
+
+    private void Start()
+    {
+        coconutCounter = GameObject.FindGameObjectWithTag("CoconutCounter").GetComponent<CoconutCounter>();
+    }
+
     void Update()
     {
         // Check if the "E" key is pressed and the boat hasn't been spawned yet
         if (Input.GetKeyDown(KeyCode.E) && !isBoatSpawned) // Interact with "E"
         {
             TrySpawnBoat();
-        }
+        } 
     }
 
     private void TrySpawnBoat()
@@ -69,8 +78,8 @@ public class LogsToBoat : MonoBehaviour
         // Include this log in the total count for proximity check
         nearbyLogs.Add(gameObject);
 
-        // Check if there are at least 2 logs nearby (including the current one)
-        bool logsNearby = nearbyLogs.Count >= 1;
+        // Check if there are at least 6 logs nearby (including the current one)
+        bool logsNearby = nearbyLogs.Count >= 6;
         Debug.Log(logsNearby ? "Logs are nearby." : "Not enough logs nearby.");
         return logsNearby; // Must have at least 2 logs nearby
     }
@@ -107,8 +116,12 @@ public class LogsToBoat : MonoBehaviour
         // Set the boat's parent to the BoatSpawner (optional, to keep hierarchy clean)
         boat.transform.SetParent(boatSpawner.transform);
 
-       
-
         isBoatSpawned = true; // Update state to indicate a boat has been spawned
     }
+
+    public bool IsBoatSpawned()
+    {
+        return isBoatSpawned;
+    }
+    
 }
