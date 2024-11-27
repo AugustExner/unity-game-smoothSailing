@@ -75,5 +75,10 @@ public class WindRotationScript : MonoBehaviour
             targetWindDirectionAngle = 135;
         }
 
+        if (player.position.x > 620)
+        {
+            targetWindDirectionAngle = 0;
+        }
+
     }
 }
