@@ -94,8 +94,10 @@ public class WaterEnemyFollow : MonoBehaviour
 
     private void GoToObject(Vector3 obj)
     {
-
-        agent.SetDestination(obj);
+        if (agent != null)
+        {
+            agent.SetDestination(obj);
+        }
     }
 
 

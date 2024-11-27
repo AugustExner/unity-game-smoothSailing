@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
-using Microsoft.Unity.VisualStudio.Editor; // Only if using TextMeshPro, otherwise use UnityEngine.UI for standard Text
+//using Microsoft.Unity.VisualStudio.Editor; // Only if using TextMeshPro, otherwise use UnityEngine.UI for standard Text
 
 public class InteractableBase : MonoBehaviour
 {

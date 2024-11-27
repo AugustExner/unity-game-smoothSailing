@@ -16,6 +16,10 @@ public class WindRotationScript : MonoBehaviour
 
     private Transform player;
 
+    private int windChangesAmount = 0;
+
+    public TutorialScript tutorialScript;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -61,18 +65,28 @@ public class WindRotationScript : MonoBehaviour
 
     void changeWindBasedOnPlayer(Transform player)
     {
-        if (player.position.x > 195) {
-            targetWindDirectionAngle = 90;
+        if (player.position.x > 180 && windChangesAmount < 1)
+        {
+            tutorialScript.SetTutorial(3);
+            windChangesAmount++;
         }
 
-        if (player.position.x > 440)
+        if (player.position.x > 195 && windChangesAmount < 2) {
+            targetWindDirectionAngle = 90;
+            windChangesAmount++;
+            tutorialScript.SetTutorial(2);
+        }
+
+        if (player.position.x > 440 && windChangesAmount < 3)
         {
             targetWindDirectionAngle = 45;
+            windChangesAmount++;
         }
 
-        if (player.position.x > 538)
+        if (player.position.x > 538 && windChangesAmount < 4)
         {
             targetWindDirectionAngle = 135;
+            windChangesAmount++;
         }
 
     }

@@ -9,9 +9,9 @@ public class TutorialScript : MonoBehaviour
     public TextMeshProUGUI mText;
 
     string[] tutorials = { "Escape the island by building a boat. Collect coconuts for the trip!. \r\n\nMove on 'WASD'. \r\n\nUse 'E' to interact with objects.",
-                           "Press 'A' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.",
-                           "Unity",
-                           "C#",
+                           "Press 'W' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.",
+                           "Wow! The wind direction just changed, be aware! \r\nKeep an eye on the wind indicator beneath your healthbar. ",
+                           "The shark just targeted the turtle instead of me!",
                            "TextMeshPro"
     };
 
