@@ -9285,7 +9285,7 @@ Transform:
   m_GameObject: {fileID: 516960357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 636.21735, y: 10.2, z: 158.48904}
+  m_LocalPosition: {x: 82.8, y: 10.2, z: 110}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38056,7 +38056,7 @@ MonoBehaviour:
   currentHealth: 0
   gameOverScreen: {fileID: 1135466218}
   healthBar: {fileID: 1708037496}
-  HUD: {fileID: 1135466223}
+  HUD: {fileID: 0}
 --- !u!114 &1928662326
 MonoBehaviour:
   m_ObjectHideFlags: 0
