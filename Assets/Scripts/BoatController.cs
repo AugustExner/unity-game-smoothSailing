@@ -23,6 +23,10 @@ public class BoatController : MonoBehaviour
     float horizontalInput;
     float steeringFactor;
 
+    private void Start()
+    {
+        gameObject.GetComponent<FloatObjectScript>().enabled = true;
+    }
 
     // Update is called once per frame
     void Update()

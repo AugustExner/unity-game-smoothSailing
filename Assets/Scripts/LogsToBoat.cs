@@ -99,7 +99,8 @@ public class LogsToBoat : MonoBehaviour
         Vector3 spawnPosition = boatSpawnLocation.position;
 
         // Define the desired rotation for the boat (adjust these values as needed)
-        Quaternion boatRotation = Quaternion.Euler(0, 110, 0); // Example: Rotates the boat 90 degrees on the Y-axis
+        //Quaternion boatRotation = Quaternion.identity; // Example: Rotates the boat 90 degrees on the Y-axis
+        Quaternion boatRotation = Quaternion.Euler(0, -180, 0); // Example: Rotates the boat 90 degrees on the Y-axis
 
         // Instantiate the boat prefab at the specific spawn position within the BoatSpawner
         GameObject boat = Instantiate(Wood_BoatV1, spawnPosition, boatRotation);
