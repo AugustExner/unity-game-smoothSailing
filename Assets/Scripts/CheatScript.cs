@@ -15,10 +15,10 @@ public class CheatScript : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
 
-        if (PlayerPrefs.HasKey("tutorialNumber"))
-        {
-            PlayerPrefs.SetInt("tutorialNumber", 1);
-        }
+        //if (PlayerPrefs.HasKey("tutorialNumber"))
+        //{
+        //    PlayerPrefs.SetInt("tutorialNumber", 0);
+        //}
     }
 
     // Update is called once per frame

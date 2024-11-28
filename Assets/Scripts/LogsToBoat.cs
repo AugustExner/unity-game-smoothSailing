@@ -16,6 +16,7 @@ public class LogsToBoat : MonoBehaviour
     public GameObject TransparentBoat;
 
     private CoconutCounter coconutCounter;
+    public TutorialScript tutorialScript;
 
 
     private void Start()
@@ -116,6 +117,8 @@ public class LogsToBoat : MonoBehaviour
 
         // Set the boat's parent to the BoatSpawner (optional, to keep hierarchy clean)
         boat.transform.SetParent(boatSpawner.transform);
+
+        tutorialScript.SetTutorial(4);
 
         isBoatSpawned = true; // Update state to indicate a boat has been spawned
     }

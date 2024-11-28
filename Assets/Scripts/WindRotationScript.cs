@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WindRotationScript : MonoBehaviour
@@ -19,6 +20,7 @@ public class WindRotationScript : MonoBehaviour
     private int windChangesAmount = 0;
 
     public TutorialScript tutorialScript;
+    private bool coconutTutorial = false;
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class WindRotationScript : MonoBehaviour
         RotateWindIndicator(windDirectionAngle);
 
         //Change wind based on player position
-        changeWindBasedOnPlayer(player);
+        changeWindBasedOnPlayer();
     }
 
     void ChangeWindDirection()
@@ -63,40 +65,40 @@ public class WindRotationScript : MonoBehaviour
         return windDirectionAngle;
     }
 
-    void changeWindBasedOnPlayer(Transform player)
+    void changeWindBasedOnPlayer()
     {
-        if (player.position.x > 180 && windChangesAmount < 1)
+        if (!coconutTutorial && player.position.x > 110)
         {
-            tutorialScript.SetTutorial(3);
-            windChangesAmount++;
+            tutorialScript.SetTutorial(5);
+            coconutTutorial = true;
         }
 
-        if (player.position.x > 210 && windChangesAmount < 2)
+        if (player.position.x > 210 && windChangesAmount < 1)
         {
             targetWindDirectionAngle = 90;
             windChangesAmount++;
             tutorialScript.SetTutorial(2);
         }
 
-        if (player.position.x > 380 && windChangesAmount < 3)
+        if (player.position.x > 380 && windChangesAmount < 2)
         {
             targetWindDirectionAngle = 320;
             windChangesAmount++;
         }
 
-        if (player.position.x > 440 && windChangesAmount < 4)
+        if (player.position.x > 440 && windChangesAmount < 3)
         {
             targetWindDirectionAngle = 45;
             windChangesAmount++;
         }
 
-        if (player.position.x > 538 && windChangesAmount < 5)
+        if (player.position.x > 538 && windChangesAmount < 4)
         {
             targetWindDirectionAngle = 135;
             windChangesAmount++;
         }
 
-        if (player.position.x > 620 && windChangesAmount < 6)
+        if (player.position.x > 620 && windChangesAmount < 5)
         {
             targetWindDirectionAngle = 300;
             windChangesAmount++;

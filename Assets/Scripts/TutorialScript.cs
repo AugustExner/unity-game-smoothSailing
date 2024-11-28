@@ -7,12 +7,14 @@ using UnityEngine;
 public class TutorialScript : MonoBehaviour
 {
     public TextMeshProUGUI mText;
+    private Transform player;
 
     string[] tutorials = { "Escape the island by building a boat. Collect coconuts for the trip!. \r\n\nMove on 'WASD'. \r\n\nUse 'E' to interact with objects.",
                            "Press 'W' or 'S' to trim your sails. \r\nTrim them tighter when sailing close to the wind, and ease them out as you sail further away to catch more wind and increase speed.",
-                           "Wow! The wind direction just changed, be aware! \r\nKeep an eye on the wind indicator beneath your healthbar. ",
-                           "The shark just targeted the turtle instead of me!",
-                           "TextMeshPro"
+                           "The wind direction just changed, be aware! \r\nKeep an eye on the wind indicator beneath your healthbar. ",
+                           "Wow! The shark just targeted the turtle instead of the boat!",
+                           "Gather coconuts for your trip, you dont know how far you have!",
+                           "Use 'G' to drop a coconut behind the boat. \r\nThis can be used to stun an enemy. \r\nUse them wisely!"
     };
 
     public GameObject tutorial;
@@ -28,15 +30,13 @@ public class TutorialScript : MonoBehaviour
         {
             PlayerPrefs.SetInt("tutorialNumber", 0);
         }
-
-
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         SetText(PlayerPrefs.GetInt("tutorialNumber"));
-
     }
 
     void SetText(int index)

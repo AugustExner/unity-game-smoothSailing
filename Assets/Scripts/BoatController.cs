@@ -25,12 +25,13 @@ public class BoatController : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<FloatObjectScript>().enabled = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameObject.GetComponent<FloatObjectScript>().enabled = true;
         Balance();
         //Movement(); 
         Steering();

@@ -3838,7 +3838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 36b3b13124e6063458a6e3bd54ca9d14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbc569df825adb4498ecd81499c78ce0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3896,6 +3896,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -4626,7 +4630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.735996
+      value: -30.736
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6292,7 +6296,7 @@ Transform:
   m_GameObject: {fileID: 316053245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 284.04895, y: 33.150505, z: 1.6509819}
+  m_LocalPosition: {x: 275.3, y: 33.150505, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8429,6 +8433,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -9189,6 +9197,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -9859,6 +9871,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -11347,6 +11363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllObjects: []
+  tutorialScript: {fileID: 1255752560}
 --- !u!4 &519807403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2163638922579260616, guid: 71cf87aafb595474699f4c1306e52b7d, type: 3}
@@ -12312,6 +12329,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -13811,10 +13832,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fa0b916387bd92b458c15e4900a40aac, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: fa0b916387bd92b458c15e4900a40aac, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13978,7 +13999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092798632874625391, guid: 13ca1d7762854bb41a1ca26f2e3fffa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 324.78247
+      value: 313.2
       objectReference: {fileID: 0}
     - target: {fileID: 9092798632874625391, guid: 13ca1d7762854bb41a1ca26f2e3fffa7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13986,7 +14007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092798632874625391, guid: 13ca1d7762854bb41a1ca26f2e3fffa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 91.36904
+      value: 114.3
       objectReference: {fileID: 0}
     - target: {fileID: 9092798632874625391, guid: 13ca1d7762854bb41a1ca26f2e3fffa7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14996,6 +15017,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -15510,6 +15535,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -16266,6 +16295,18 @@ PrefabInstance:
     - target: {fileID: 1594521551470548215, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461469970626450180, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461469970626450180, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461469970626450180, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.16
       objectReference: {fileID: 0}
     - target: {fileID: 3794958337848780517, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18140,6 +18181,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -20068,7 +20113,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 140}
-  m_SizeDelta: {x: 333.4734, y: 94.0742}
+  m_SizeDelta: {x: 350, y: 94.0742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892580844
 MonoBehaviour:
@@ -20143,9 +20188,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1564669542}
-        m_TargetAssemblyTypeName: PauseScreen, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 1135466223}
+        m_TargetAssemblyTypeName: HUD, Assembly-CSharp
+        m_MethodName: tryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20492,6 +20537,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -21663,6 +21712,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -21790,6 +21843,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -21904,7 +21961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1594521551470548215, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.95731
+      value: 54.39
       objectReference: {fileID: 0}
     - target: {fileID: 1594521551470548215, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21969,6 +22026,10 @@ PrefabInstance:
     - target: {fileID: 7080239359646587889, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308710531144731172, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24068,6 +24129,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -27569,7 +27634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.15847
+      value: 54.158474
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27577,7 +27642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.144054
+      value: -41.14404
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27589,7 +27654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97477436
+      value: 0.9747744
       objectReference: {fileID: 0}
     - target: {fileID: 8535265655307596135, guid: 380e869112d5086468a3a3992e91109d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -27691,7 +27756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Try Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -27797,15 +27862,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184521828}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.6427877, z: -0, w: -0.7660444}
-  m_LocalPosition: {x: 216.87, y: 33.150505, z: -73.82}
+  m_LocalRotation: {x: -0, y: -0.7466328, z: -0, w: -0.6652364}
+  m_LocalPosition: {x: 236.9, y: 33.150505, z: -18.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1506013858}
   - {fileID: 184597335}
   m_Father: {fileID: 1208222743}
-  m_LocalEulerAnglesHint: {x: 0, y: 280, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 456.599, z: 0}
 --- !u!4 &1186756408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1594521551470548215, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
@@ -29117,6 +29182,7 @@ GameObject:
   - component: {fileID: 1230564154}
   - component: {fileID: 1230564157}
   - component: {fileID: 1230564158}
+  - component: {fileID: 1230564159}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -29222,6 +29288,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcb66f9b3539fc4991d33a6647c3c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1230564159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230564153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad642ae9a824e642a6608e6f7aba174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialScript: {fileID: 1255752560}
+  tutorialNumber: 1
 --- !u!4 &1232832457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6699260955137193084, guid: 4d70aa0c11e9e2c43b1b52e83b27a9cb, type: 3}
@@ -31473,6 +31553,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -34337,6 +34421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3461469970626450180, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.47
+      objectReference: {fileID: 0}
     - target: {fileID: 3794958337848780517, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -35034,6 +35122,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -38540,6 +38632,7 @@ MonoBehaviour:
   spawnProximityThreshold: 3
   boatSpawnLocation: {fileID: 0}
   TransparentBoat: {fileID: 0}
+  tutorialScript: {fileID: 0}
 --- !u!4 &1583201976
 Transform:
   m_ObjectHideFlags: 0
@@ -38843,6 +38936,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -40842,6 +40939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 708751051}
     m_Modifications:
+    - target: {fileID: 212020307328029942, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.29
+      objectReference: {fileID: 0}
     - target: {fileID: 455643398775890199, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -40885,6 +40986,10 @@ PrefabInstance:
     - target: {fileID: 1594521551470548215, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461469970626450180, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 3794958337848780517, guid: 284deeac516b0154cb25c19ed0d949a1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -43621,6 +43726,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -44081,6 +44190,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
@@ -46981,6 +47094,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 
       objectReference: {fileID: 0}
@@ -48563,13 +48680,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -50668,6 +50785,10 @@ PrefabInstance:
       propertyPath: coconutCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
+      propertyPath: tutorialScript
+      value: 
+      objectReference: {fileID: 1255752560}
     - target: {fileID: 5733190092641461288, guid: 038427f09668ed74a99465a972a18c20, type: 3}
       propertyPath: boatSpawnLocation
       value: 

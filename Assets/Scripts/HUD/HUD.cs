@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour
 {
@@ -96,5 +97,10 @@ public class HUD : MonoBehaviour
         {
             boatController.enabled = false;
         }
+    }
+
+    public void tryAgain()
+    {
+        SceneManager.LoadScene(3);
     }
 }
