@@ -52,10 +52,10 @@ public class HUD : MonoBehaviour
     {
         Cursor.visible = true;
         pauseScreen.SetActive(true);
-        if (interactionBox)
-        {
-            interactionBox.SetActive(false);
-        }
+        //if (interactionBox)
+        //{
+        //    interactionBox.SetActive(false);
+        //}
         Time.timeScale = 0;
 
 
@@ -71,10 +71,10 @@ public class HUD : MonoBehaviour
     {
         isPaused = false;
         pauseScreen.SetActive(false);
-        if (interactionBox)
-        {
-            interactionBox.SetActive(true);
-        }
+        //if (interactionBox)
+        //{
+        //    interactionBox.SetActive(true);
+        //}
         Time.timeScale = 1;
         Cursor.visible = true;
         music.SetActive(true);
