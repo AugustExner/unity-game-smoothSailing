@@ -77,15 +77,27 @@ public class WindRotationScript : MonoBehaviour
             tutorialScript.SetTutorial(2);
         }
 
-        if (player.position.x > 440 && windChangesAmount < 3)
+        if (player.position.x > 380 && windChangesAmount < 3)
+        {
+            targetWindDirectionAngle = 320;
+            windChangesAmount++;
+        }
+
+        if (player.position.x > 440 && windChangesAmount < 4)
         {
             targetWindDirectionAngle = 45;
             windChangesAmount++;
         }
 
-        if (player.position.x > 538 && windChangesAmount < 4)
+        if (player.position.x > 538 && windChangesAmount < 5)
         {
             targetWindDirectionAngle = 135;
+            windChangesAmount++;
+        }
+
+        if (player.position.x > 620 && windChangesAmount < 6)
+        {
+            targetWindDirectionAngle = 300;
             windChangesAmount++;
         }
 
