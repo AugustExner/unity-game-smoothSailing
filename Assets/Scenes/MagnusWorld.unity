@@ -42008,7 +42008,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -46568,7 +46568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  currentHealth: 0
+  currentHealth: 8
   gameOverScreen: {fileID: 1135466218}
   healthBar: {fileID: 1708037496}
   HUD: {fileID: 1135466223}

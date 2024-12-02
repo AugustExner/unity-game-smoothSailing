@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CarryCoconut : MonoBehaviour
 {
     public GameObject player;                 // Reference to the player object
+    public PlayerHealth playerHealth;                 // Reference to the player object
     public float carryDistanceThreshold = 1f; // Distance within which the player can carry the coconut
     public float boatProximityThreshold = 3f; // Distance within which the player can interact with the boat
 
@@ -19,6 +20,9 @@ public class CarryCoconut : MonoBehaviour
     public CoconutCounter coconutCounter;
 
     public LogsToBoat logsToBoat;
+
+
+    public TutorialScript tutorialScript;
 
 
 
@@ -57,6 +61,27 @@ public class CarryCoconut : MonoBehaviour
         {
             Debug.Log("E key pressed, attempting to carry, drop, or interact with boat...");
             TryToggleCarriable();
+        }
+
+
+        if (isCarryingCoconut)
+        {
+            if (PlayerPrefs.HasKey("firstCoconut"))
+            {
+                if (PlayerPrefs.GetInt("firstCoconut") != 1)
+                {
+                    tutorialScript.SetTutorial(6);
+                    PlayerPrefs.SetInt("firstCoconut", 1);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    playerHealth.HealPlayer(2);
+                    //currentCarriable = null;
+                    isCarryingCoconut = false;
+                    Destroy(currentCarriable);  // Destroy the coconut if near the boat
+                }
+            }
         }
     }
 
@@ -146,9 +171,6 @@ public class CarryCoconut : MonoBehaviour
         }
 
     }
-
-
-
 
     public void TryCarryCarriable()
     {

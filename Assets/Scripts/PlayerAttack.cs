@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class PlayerAttack : MonoBehaviour
 
     public CoconutCounter coconutCounter;
     public GameObject coconutObject;
+    private GameObject player;
 
 
     [SerializeField] private AudioClip coconutSpawnSound;
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+
         if (PlayerPrefs.HasKey("CoconutCounter"))
         {
             currentAmmo = PlayerPrefs.GetInt("CoconutCounter");
@@ -34,6 +38,12 @@ public class PlayerAttack : MonoBehaviour
             UseCoconut();
             SpawnCoconut();
         }
+
+        if (Input.GetKeyDown(KeyCode.F) && currentAmmo > 0)
+        {
+            UseCoconut();
+            EatCoconut();
+        }
     }
 
     void UseCoconut()
@@ -49,6 +59,16 @@ public class PlayerAttack : MonoBehaviour
         Instantiate(coconutObject, spawnPosition, Random.rotation);
 
         SoundFXManager.instance.PlaySoundFXClip(coconutSpawnSound, transform, 1f);
+    }
+
+    void EatCoconut()
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        
+        if (playerHealth != null)
+        {
+            playerHealth.HealPlayer(2);
+        }
     }
 }
 

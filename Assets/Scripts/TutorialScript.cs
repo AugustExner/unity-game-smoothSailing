@@ -14,7 +14,8 @@ public class TutorialScript : MonoBehaviour
                            "The wind direction just changed, be aware! \r\nKeep an eye on the wind indicator beneath your healthbar. ",
                            "Wow! The shark just targeted the turtle instead of the boat!",
                            "Gather coconuts for your trip, you dont know how far you have!",
-                           "Use 'G' to drop a coconut behind the boat. \r\nThis can be used to stun an enemy. \r\nUse them wisely!"
+                           "Use 'G' to drop a coconut behind the boat. \r\nThis can be used to stun an enemy. \r\nUse them wisely!",
+                           "You can eat a coconut on 'F' to increase your health"
     };
 
     public GameObject tutorial;

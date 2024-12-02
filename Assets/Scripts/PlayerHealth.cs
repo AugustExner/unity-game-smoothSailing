@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -32,8 +33,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = PlayerPrefs.GetInt("playerHealth");
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -56,6 +58,24 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+    }
+
+    public void HealPlayer(int heal)
+    {
+        if (currentHealth + heal > maxHealth)
+        {
+            currentHealth = maxHealth;
+            healthBar.SetHealth(currentHealth);
+        }
+        else
+        {
+            currentHealth += heal;
+            healthBar.SetHealth(currentHealth);
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                PlayerPrefs.SetInt("playerHealth", currentHealth);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -82,7 +102,6 @@ public class PlayerHealth : MonoBehaviour
         return false;
     }
 
-
     void DrownPlayer()
     {
         StartCoroutine(TakeDamageEachSecond());
@@ -90,14 +109,11 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator TakeDamageEachSecond()
     {
-        for (int i = 0; i < 10; i++)
+        while (currentHealth > 0)
         {
             TakeDamage(1);
             yield return new WaitForSeconds(1f);
         }
     }
-
-
-
 }
 
