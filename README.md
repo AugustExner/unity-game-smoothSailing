@@ -1,5 +1,8 @@
 # SmoothSailing
 
+# Go the the branch Main28Nov
+This is the branch containing the latests update. 
+
 
 
 ## Getting started
